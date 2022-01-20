@@ -1,0 +1,13 @@
+<div class="pipe-container">
+    <span>This is a reverse string ('hello') using a custom pipe: {{'hello' | reverse }} </span>
+    <span>You can chain pipes ('goodbye') (reverse + uppercase): {{'goodbye' | reverse | uppercase}}</span>
+  
+    <h2>Power Boost Calculator</h2>
+      <label for="power-input">Normal power: </label>
+      <input id="power-input" type="text" value={{powerInput}}>
+      <label for="boost-input">Boost factor: </label>
+      <input id="boost-input" type="text" value={{boostFactor}}>
+      <p>
+        Super Hero Power: {{powerInput | exponentialPower: boostFactor}}
+      </p>
+  </div>
