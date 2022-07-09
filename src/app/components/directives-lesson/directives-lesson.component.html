@@ -1,0 +1,19 @@
+<div>
+    <h1>Directives Lesson</h1>
+    <div>
+        <h2>Structural Directive</h2>
+        <div *ngFor="let name of names">
+            <li>{{name}}</li>
+        </div>
+        <div *ngIf="!hidden">
+            <span>HERE I AM</span>
+        </div>
+        <button (click)="hideText()">{{buttonLabel}}</button>
+    </div>
+    <div>
+        <h2>Attribute Directive</h2>
+        <div *ngFor="let name of names">
+            <li>{{name}}</li>
+        </div>
+    </div>
+</div> 

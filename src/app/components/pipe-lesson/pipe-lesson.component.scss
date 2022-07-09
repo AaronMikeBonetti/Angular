@@ -1,6 +1,11 @@
-.pipe-container {
+.pipe-component-container {
+    box-sizing: border-box;
+    
     span{
         display: block;
+        margin: 20px;
+    }
+    .exponential-power-container{
         margin: 20px;
     }
 }

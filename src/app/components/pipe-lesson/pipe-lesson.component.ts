@@ -10,8 +10,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class PipeLessonComponent implements OnInit {
 
-  powerInput: number = 2;
-  boostFactor: number = 3;
+  value: number = 0;
+  exponent: number = 0;
 
   constructor() { }
 

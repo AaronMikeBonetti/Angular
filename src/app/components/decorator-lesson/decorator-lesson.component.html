@@ -1,0 +1,16 @@
+<div class="decorator-contatiner">
+    <h1>Decorator Lesson</h1>
+    <div>
+        <h2>Method Decorator: @HostListener</h2>
+        <h3>When you press a key, angular listens and the count will go up</h3>
+        <h3 *ngIf="counter !== 1">You have pressed {{counter}} keys!</h3>
+        <h3 *ngIf="counter === 1">You have pressed {{counter}} key!</h3>
+        <h3 *ngIf="lastKeyPressed">You have pressed the '{{lastKeyPressed}}' key</h3>
+        <h3 *ngIf="!lastKeyPressed">No key was pressed yet!</h3>
+        <button class="reset-button" (click)="resetCounter()">Reset counter</button>
+    </div>
+    <div>
+        <h2>Property Decorator: @Input</h2>
+        <span>this is from the parent component (app.component.html): {{propertyDecoratorExample}}</span>
+    </div>
+</div>
