@@ -1,4 +1,4 @@
-//A decorator is a function that takes in metadata or values to configure how a class, component or function should be processed.
+//Decorators provide configuration metadata that determines how the class(component,service,module), property, method or parameter should be processed, instantiated, and used at runtime.
 //A decorator takes another function or data and extends or changes the behavior of that function without explicitly modifying the original data or function.
 //An example of this is the class pipe decorator, the uppercase pipe takes in a value and makes the string uppercase without modifying the actual data.
 
@@ -21,6 +21,8 @@
 //           and can use this event object to modify the target element or get more information about the event that is triggered.
 
 //4.Parameter - allows you to manually tell Angular to inject a particular provider. a provider is just an object that tells the class how to inject the dependency.
+//            - it can also be used to do something with a parameter in a method ie : function Thing(@ValidateParameter thingy){}
+//            - then just create a function that looks like this: function ValidateParameter(target:any, propertyKey:any, propertyIndex:any){}
 
 //  Example: @Inject is used to provide a custom provider to the class to use a dependency
 //
@@ -40,7 +42,7 @@
 //                                                  ^^^^^^^^^ - this is the provider token
 //                 }
 
-import { Component, HostListener, Inject, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, HostListener, Inject, Input, OnInit, Output } from '@angular/core';
 
 //Class Decorator
 @Component({
@@ -53,21 +55,32 @@ export class DecoratorLessonComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  //Property Decorator
-  @Input() propertyDecoratorExample: string;
+   //Property Decorator
+
+    //@Input
+  parentToChildDecorator:string = 'this is the parent talking to the child';
+  @Output() childToParentDecorator: string;
+
+    //@Output
+  propertyCounter: number;
+
+  childToParentDecoratorEvent(count:any):void{
+     this.propertyCounter = count
+   }
 
   //Method Decorator
-  counter: number = 0;
+  methodCounter: number = 0;
   lastKeyPressed: any;
   @HostListener('window:keydown', ['$event'])
   
   handleKeyDown(event: KeyboardEvent) {
     this.lastKeyPressed = event.key;
-    this.counter++;
+    this.methodCounter++;
   }
 
   resetCounter() {
-    this.counter = 0;
+    this.methodCounter = 0;
     this.lastKeyPressed = null;
   }
+
 }

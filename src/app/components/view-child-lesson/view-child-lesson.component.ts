@@ -26,7 +26,7 @@ export class ViewChildLessonComponent implements OnInit, AfterViewInit, OnChange
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.nameRef)
+    console.log(this.nameRef, this.nameElementRef)
   }
 
   ngOnInit(): void {

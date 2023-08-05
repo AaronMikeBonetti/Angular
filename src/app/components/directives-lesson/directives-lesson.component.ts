@@ -22,14 +22,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesLessonComponent implements OnInit {
 
-  names: Array<any> = ['Monica','Erica',"Rita","Tina","Sandra","Mary","Jessica"]
+  names: Array<string> = ['Monica','Erica',"Rita","Tina","Sandra","Mary","Jessica"]
   buttonLabel: string = 'Hide'
   hidden: boolean = false;
+  color = 'purple'
+  color2 = 'grey'
+  title: string;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
   hideText(){
     this.hidden = !this.hidden

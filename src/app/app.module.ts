@@ -9,6 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { ViewChildLessonComponent } from './components/view-child-lesson/view-child-lesson.component';
 import { DecoratorLessonComponent } from './components/decorator-lesson/decorator-lesson.component';
 import { DirectivesLessonComponent } from './components/directives-lesson/directives-lesson.component';
+import { ObservableLessonComponent } from './components/observable-lesson/observable-lesson.component';
+import { NgrxLessonComponent } from './components/ngrx-lesson/ngrx-lesson.component';
+import { RxjsLessonComponent } from './components/rxjs-lesson/rxjs-lesson.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { RoutingLessonComponent } from './components/routing-lesson/routing-lesson.component';
+import { LifeCycleHooksLessonComponent } from './components/life-cycle-hooks-lesson/life-cycle-hooks-lesson.component';
+import { DecoratorLessonChildComponent } from './components/decorator-lesson/decorator-lesson-child/decorator-lesson-child.component';
+
 
 
 @NgModule({
@@ -20,6 +29,14 @@ import { DirectivesLessonComponent } from './components/directives-lesson/direct
     ViewChildLessonComponent,
     DecoratorLessonComponent,
     DirectivesLessonComponent,
+    ObservableLessonComponent,
+    NgrxLessonComponent,
+    RxjsLessonComponent,
+    HomeComponent,
+    NavBarComponent,
+    RoutingLessonComponent,
+    LifeCycleHooksLessonComponent,
+    DecoratorLessonChildComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,26 @@
 <div class="decorator-contatiner">
     <h1>Decorator Lesson</h1>
+    <p>Decorators provide configuration metadata that determines how the class (component, service, module), method, property or parameter should be processed, instantiated, and used at runtime.
+        A decorator takes another function or data and extends or changes the behavior of that function without explicitly modifying the original data or function.
+        An example of this is the class pipe decorator, the uppercase pipe takes in a value and makes the string uppercase without modifying the actual data.</p>
+    <span>Example : {{'uppercase' | uppercase}}</span>
     <div>
+        <div>{{parentToChildDecorator}}</div>
         <h2>Method Decorator: @HostListener</h2>
         <h3>When you press a key, angular listens and the count will go up</h3>
-        <h3 *ngIf="counter !== 1">You have pressed {{counter}} keys!</h3>
-        <h3 *ngIf="counter === 1">You have pressed {{counter}} key!</h3>
+        <h3 *ngIf="methodCounter !== 1">You have pressed {{methodCounter}} keys!</h3>
+        <h3 *ngIf="methodCounter === 1">You have pressed {{methodCounter}} key!</h3>
         <h3 *ngIf="lastKeyPressed">You have pressed the '{{lastKeyPressed}}' key</h3>
         <h3 *ngIf="!lastKeyPressed">No key was pressed yet!</h3>
         <button class="reset-button" (click)="resetCounter()">Reset counter</button>
     </div>
     <div>
         <h2>Property Decorator: @Input</h2>
-        <span>this is from the parent component (app.component.html): {{propertyDecoratorExample}}</span>
+        <p>The @Input decorator allows us to update data from the parent to the child component</p>
+        <app-decorator-lesson-child [parentToChildDecorator] ="parentToChildDecorator" (childEventData)="childToParentDecoratorEvent($event)"></app-decorator-lesson-child>
+        <h2>Property Decorator: @Output</h2>
+        <p>The @Output decorator allows us to update data from the child to parent component</p>
+        <span>{{propertyCounter}}</span>
     </div>
+    
 </div>

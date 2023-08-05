@@ -2,18 +2,20 @@
     <h1>Directives Lesson</h1>
     <div>
         <h2>Structural Directive</h2>
+            <h3>ngFor</h3>
         <div *ngFor="let name of names">
             <li>{{name}}</li>
         </div>
+        <h3>ngIf</h3>
         <div *ngIf="!hidden">
             <span>HERE I AM</span>
         </div>
         <button (click)="hideText()">{{buttonLabel}}</button>
     </div>
     <div>
-        <h2>Attribute Directive</h2>
-        <div *ngFor="let name of names">
-            <li>{{name}}</li>
-        </div>
+        <h2 >Attribute Directive</h2>
+        <span [ngStyle]="{color: color, background: color2}">
+            This is being styled by [ngStyle]
+        </span>
     </div>
 </div> 
