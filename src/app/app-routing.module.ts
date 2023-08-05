@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DecoratorLessonComponent } from './components/decorator-lesson/decorator-lesson.component';
+import { DecoratorLessonComponent } from './components/decorator-lesson/decorator-lesson-parent/decorator-lesson-parent.component';
 import { DirectivesLessonComponent } from './components/directives-lesson/directives-lesson.component';
 import { ViewChildLessonComponent } from './components/view-child-lesson/view-child-lesson.component';
 import { HomeComponent } from './components/home/home.component';

@@ -4,15 +4,11 @@
 
 //There are 4 types of decorators
 
-//1.Class - Tells us about a particular class’s intent and helps answer questions like whether the class is a component, service or a module.
 
-//  Example: The @Component Decorator marks a class as an Angular component and provides configuration
-//  metadata that determines how the component should be processed, instantiated, and used at runtime, same with @Injectable for services.
 
 //2.Property - used to decorate specific properties or variables inside a class.
 
-//  Example: The @Input and @Output Decorator allows a component to exchange data between itself and either
-//  its child component or parent component
+//  
 
 //3.Method - similar to property decorators but are used for methods instead.
 
@@ -47,8 +43,8 @@ import { Component, HostBinding, HostListener, Inject, Input, OnInit, Output } f
 //Class Decorator
 @Component({
   selector: 'app-decorator-lesson',
-  templateUrl: './decorator-lesson.component.html',
-  styleUrls: ['./decorator-lesson.component.scss'],
+  templateUrl: './decorator-lesson-parent.component.html',
+  styleUrls: ['./decorator-lesson-parent.component.scss'],
 })
 export class DecoratorLessonComponent implements OnInit {
   constructor() {}

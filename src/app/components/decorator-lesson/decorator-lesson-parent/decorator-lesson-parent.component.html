@@ -1,0 +1,80 @@
+<div class="decorator-contatiner">
+    <h1>Decorator Overview</h1>
+    <p>Decorators provide configuration metadata that determines how the class (component, service, module), method, property or parameter should be processed, instantiated, and used at runtime.
+        A decorator takes another function or data and extends or changes the behavior of that function without explicitly modifying the original data or function.
+        An example of this is the class pipe decorator, the uppercase pipe takes in a value and makes the string uppercase without modifying the actual data.
+        <br>
+        <span>Example : {{'uppercase' | uppercase}}</span>
+    </p>
+    <h2>There are 5 main types of decorators
+    </h2>
+    <ul>
+        <li>Component</li>
+        <li>Parameter</li>
+        <li>Property</li>
+        <li>Method</li>
+        <li>Custom</li>
+    </ul>
+    <div>
+        <h2>Class</h2>
+        <p>Tells us about a particular class’s intent and helps answer questions like whether the class is a component, service or a module.
+            <br>
+            <span>Example: The @Component Decorator marks a class as an Angular component and provides configuration
+                metadata that determines how the component should be processed, instantiated, and used at runtime, same with @Injectable for services.
+            </span>
+        </p>
+    </div>
+    <div>
+        <h2>Parameter</h2>
+        <p> 
+            Allows you to manually tell Angular to inject a particular provider. a provider is just an object that tells the class how to inject the dependency.
+            It can also be used to do something with a parameter in a method ie : function doSomething(@ValidateParameter data).
+            Then just create a function that looks like this: function ValidateParameter(target:any, propertyKey:any, propertyIndex:any). 
+            This Allows you to configure the data that is being fed to the function before it uses it.
+            <br>
+            <span>Example: @Inject is used to provide a custom provider to the class to use a dependency</span>
+        </p>
+    </div>
+    <div>
+        <h2>Property</h2>
+        <p>This is used to decorate specific properties or variables inside a class.
+            <br>
+            <span>Example: The @Input and @Output Decorator allows a component to exchange data between itself and either
+            its child component or parent component
+            </span>
+        </p>
+        <div>
+            <h3>@Input</h3>
+            <p>The @Input decorator allows us to update data from the parent to the child component</p>
+            <h3>@Output</h3>
+            <p>The @Output decorator allows us to update data from the child to parent component</p>
+            <br>
+            <span>Counter from Child: {{propertyCounter}}</span>
+            <app-decorator-lesson-child [parentToChildDecorator] ="parentToChildDecorator" (childEventData)="childToParentDecoratorEvent($event)"></app-decorator-lesson-child>
+        </div>
+    </div>
+    <div>
+        <h2>Method</h2>
+        <p>Similar to property decorators but are used for methods instead. method decorators are used to modify or enhance the behavior of class methods.
+            <br>
+            <span>Example: @HostListener is used to listen to events on the host element of a component or directive. 
+                You can use it to bind methods to specific events such as clicks, keypresses ect.
+            </span>
+        </p>
+        <div>
+            <h3>@HostListener</h3>
+            <h4>When you press a key, angular listens and the count will go up</h4>
+            <h4 *ngIf="methodCounter !== 1">You have pressed {{methodCounter}} keys!</h4>
+            <h4 *ngIf="methodCounter === 1">You have pressed {{methodCounter}} key!</h4>
+            <h4 *ngIf="lastKeyPressed">You have pressed the '{{lastKeyPressed}}' key</h4>
+            <h4 *ngIf="!lastKeyPressed">No key was pressed yet!</h4>
+            <button class="reset-button" (click)="resetCounter()">Reset counter</button>
+        </div>
+    </div>
+    <div>
+        <h2>Custom</h2>
+        <p>The last decorator type is A custom decorator is typically a TypeScript function that takes one or more arguments 
+            and is used to annotate a class, method, property, or parameter with some additional functionality.
+        </p>
+    </div>
+</div>

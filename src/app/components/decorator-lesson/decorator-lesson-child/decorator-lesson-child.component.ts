@@ -18,6 +18,10 @@ export class DecoratorLessonChildComponent implements OnInit {
     this.clickCounter = count
     this.childEventData.emit(this.clickCounter)
   }
+  resetCounter(){
+    this.clickCounter = 0
+    this.childEventData.emit(this.clickCounter)
+  }
 
   constructor() { }
 
