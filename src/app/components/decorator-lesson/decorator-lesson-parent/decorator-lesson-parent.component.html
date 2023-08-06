@@ -6,8 +6,8 @@
         <br>
         <span>Example : {{'uppercase' | uppercase}}</span>
     </p>
-    <h2>There are 5 main types of decorators
-    </h2>
+    <h3>There are 5 main types of decorators
+    </h3>
     <ul>
         <li>Component</li>
         <li>Parameter</li>
@@ -19,7 +19,7 @@
         <h2>Class</h2>
         <p>Tells us about a particular class’s intent and helps answer questions like whether the class is a component, service or a module.
             <br>
-            <span>Example: The @Component Decorator marks a class as an Angular component and provides configuration
+            <span>Example: The @Component decorator marks a class as an Angular component and provides configuration
                 metadata that determines how the component should be processed, instantiated, and used at runtime, same with @Injectable for services.
             </span>
         </p>
@@ -68,12 +68,12 @@
             <h4 *ngIf="methodCounter === 1">You have pressed {{methodCounter}} key!</h4>
             <h4 *ngIf="lastKeyPressed">You have pressed the '{{lastKeyPressed}}' key</h4>
             <h4 *ngIf="!lastKeyPressed">No key was pressed yet!</h4>
-            <button class="reset-button" (click)="resetCounter()">Reset counter</button>
+            <button class="reset-button" (click)="resetCounter()">Reset Counter</button>
         </div>
     </div>
     <div>
         <h2>Custom</h2>
-        <p>The last decorator type is A custom decorator is typically a TypeScript function that takes one or more arguments 
+        <p>The last decorator type is a custom decorator is typically a TypeScript function that takes one or more arguments 
             and is used to annotate a class, method, property, or parameter with some additional functionality.
         </p>
     </div>

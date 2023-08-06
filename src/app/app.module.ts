@@ -17,8 +17,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RoutingLessonComponent } from './components/routing-lesson/routing-lesson.component';
 import { LifeCycleHooksLessonComponent } from './components/life-cycle-hooks-lesson/life-cycle-hooks-lesson.component';
 import { DecoratorLessonChildComponent } from './components/decorator-lesson/decorator-lesson-child/decorator-lesson-child.component';
-
-
+import { HoverDirective } from './components/directives-lesson/hover.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +36,7 @@ import { DecoratorLessonChildComponent } from './components/decorator-lesson/dec
     RoutingLessonComponent,
     LifeCycleHooksLessonComponent,
     DecoratorLessonChildComponent,
+    HoverDirective,
   ],
   imports: [
     BrowserModule,
