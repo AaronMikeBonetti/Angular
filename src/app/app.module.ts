@@ -41,7 +41,7 @@ import { HoverDirective } from './components/directives-lesson/hover.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

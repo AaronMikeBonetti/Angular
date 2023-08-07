@@ -1,4 +1,4 @@
-'Pipes are used to transform data, takes an input and transforms the data without mutating the original property'
+
 
 import { Component, OnInit } from '@angular/core';
 @Component({
@@ -11,6 +11,7 @@ export class PipeLessonComponent implements OnInit {
 
   value: number = 0;
   exponent: number = 0;
+  
 
   constructor() { }
 

@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@import "prismjs/themes/prism.css";
+@import "~prismjs/themes/prism-dark.css";
+
+@font-face {
+    font-family: 'DBZ-font';
+    src: url('./assets/fonts/Saiyan-Sans.ttf');
+}
+@font-face {
+    font-family: 'Woliu-font';
+    src: url('./assets/fonts/Woliu-Maners-Demo.ttf');
+}
+*{
+    letter-spacing: 2px;
+    color: 00000;
+    font-family: Woliu-font;
+    font-size: 30px;
+    font-family: cursive;
+}
+body{
+    background-color: #8A9294;
+    h1{
+        color: #072083;
+        text-decoration: underline;
+    }
+       
+    h2{
+        color: #f85b1a;
+    }
+    
+    a{
+        color: black;
+        
+    }
+    
+    h1, h2, a{
+        letter-spacing: 5px;
+        -webkit-text-stroke: black 1px;
+    }
+
+    #code-snippet{
+        background: black;
+        color: white;
+        padding-top: 30px;
+    }
+}
+
+

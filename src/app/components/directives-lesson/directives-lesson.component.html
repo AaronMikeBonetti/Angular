@@ -3,8 +3,11 @@
     <h1>Directives Lesson</h1>
     <p>
       Directives are classes that add additional behavior to elements in the the
-      angular application, basically directives are used to manipulate the DOM,
-      ex: add element, delete element, hide element, loop element ect.
+      angular application, basically directives are used to manipulate the DOM.
+      <br>
+      <span>
+        Example: add element, delete element, hide element, loop element ect.
+      </span>
     </p>
     <h3>There are 4 types</h3>
     <ul>
@@ -56,7 +59,7 @@
       </span>
     </p>
     <div>
-      <span [ngStyle]="{ color: color, background: color2 }">
+      <span [ngStyle]="{ 'color': color, 'font-family': 'cursive', 'transform': 'scale(0.8)', 'transition': 'all 3s'  }">
         This is being styled by [ngStyle]
       </span>
     </div>
