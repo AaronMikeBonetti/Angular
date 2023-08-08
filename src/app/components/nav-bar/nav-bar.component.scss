@@ -1,13 +1,44 @@
-div{
-    display: flex;
-    justify-content: space-between;
-    a{
-        padding: 4px;
-        font-size: 24px;
-        text-decoration: none;
-        -webkit-text-stroke: white 0.2px;
-    }
-    .active{
-        text-decoration: underline;
+header{
+    position: fixed;
+    nav{
+        position: absolute;
+        display: flex;
+        justify-content:flex-start;
+        flex-direction: column;
+        height: 100vh;
+        width: 200px;
+        padding: 20px;
+        background: rgb(107, 9, 9);
+        li{
+            list-style: none;
+            a{
+                padding: 15px 0;
+                font-size: 16px;
+                text-decoration: none;
+            }
+            a::after {
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 1px;
+                left: 20px;
+                margin-top: 35px;
+                background-color: rgb(255, 255, 255);
+                opacity: 0;
+                transition: opacity 300ms, transform 300ms;
+              }
+              
+              a:hover::after,
+              a:focus::after {
+                opacity: 1;
+                transform: translate3d(0, 0.2em, 0);
+              }
+            .active{
+                text-decoration: underline white;
+                text-underline-offset: 8px;
+            }
+        }
     }
 }
+
+

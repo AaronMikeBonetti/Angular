@@ -15,8 +15,15 @@
     font-family: Woliu-font;
     font-size: 30px;
     font-family: cursive;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 body{
+    main{
+        padding: 40px;
+        margin-left: 200px;
+    }
     background-color: #8A9294;
     h1{
         color: #072083;

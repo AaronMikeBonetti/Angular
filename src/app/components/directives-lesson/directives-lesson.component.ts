@@ -21,7 +21,7 @@ export class DirectivesLessonComponent implements OnInit {
 
   hideText(){
     this.hidden = !this.hidden
-    !this.hidden ? this.buttonLabel = 'Hide' : this.buttonLabel = 'show';
+    !this.hidden ? this.buttonLabel = 'Hide' : this.buttonLabel = 'Show';
   }
 
 }
