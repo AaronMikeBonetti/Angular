@@ -9,7 +9,7 @@ export class DirectivesLessonComponent implements OnInit {
   names: Array<string> = ['Monica','Erica',"Rita","Tina","Sandra","Mary","Jessica"]
   buttonLabel: string = 'Hide'
   hidden: boolean = false;
-  color = 'purple'
+  color = 'red'
   color2 = 'grey'
   title: string;
 

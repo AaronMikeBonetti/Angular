@@ -14,24 +14,28 @@
     color: 00000;
     font-family: Woliu-font;
     font-size: 30px;
-    font-family: cursive;
+    font-family: "Open Sans", sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 body{
+
+    background-color: #5e6061;
+
     main{
         padding: 40px;
-        margin-left: 200px;
+        margin-left: 250px;
+        white-space:wrap;
     }
-    background-color: #8A9294;
+    
     h1{
-        color: #072083;
+        color: #ffffff;
         text-decoration: underline;
     }
        
     h2{
-        color: #f85b1a;
+        color: #ffffff;
     }
     
     a{
@@ -39,9 +43,8 @@ body{
         
     }
     
-    h1, h2, a{
+    h1, h2{
         letter-spacing: 5px;
-        -webkit-text-stroke: black 1px;
     }
 
     #code-snippet{
