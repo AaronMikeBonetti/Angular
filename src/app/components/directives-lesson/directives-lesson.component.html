@@ -1,5 +1,5 @@
-<div>
-  <div>
+<main>
+  <section>
     <h1>Directives Lesson</h1>
     <p>
       Directives are classes that add additional behavior to elements in the the
@@ -16,8 +16,8 @@
       <li>Attribute</li>
       <li>Custom</li>
     </ul>
-  </div>
-  <div>
+  </section>
+  <section>
     <h2>Component</h2>
     <p>
       Since a directive is is defined as something that manipulates the DOM, a
@@ -45,8 +45,8 @@
       </div>
       <button (click)="hideText()">{{ buttonLabel }}</button>
     </div>
-  </div>
-  <div>
+  </section>
+  <section>
     <h2>Attribute</h2>
     <p>
       used to change the appearance or behavior of a element
@@ -63,8 +63,8 @@
         This is being styled by [ngStyle]
       </span>
     </div>
-  </div>
-  <div>
+  </section>
+  <section>
     <h2>Custom</h2>
     <p>
         You can create your own directives just like a class or service.
@@ -73,6 +73,7 @@
             Example: appHover is a custom directive that when you hover over text, it changes the color.
         </span>
     </p>
-  </div>
-  <h3 [appHover]="'red'">Hover Over Me!</h3>
-</div>
+    <h3 [appHover]="'red'">Hover Over Me!</h3>
+  </section>
+  
+</main>

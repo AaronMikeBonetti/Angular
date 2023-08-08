@@ -1,45 +1,48 @@
-<div class="pipe-component-container">
-  <h1>Pipe Lesson</h1>
-  <p>
-    Pipes are a type of decorator and are used to transform data, takes an input and
-    transforms the data without mutating the original property.
-  </p>
-  <div class="">
+<main class="pipe-component-container">
+  <section>
+    <h1>Pipe Lesson</h1>
+    <p>
+      Pipes are a type of decorator and are used to transform data, takes an input and
+      transforms the data without mutating the original property.
+    </p>
+  </section>
+  <section class="">
     <h2>Reverse Pipe</h2>
     <p>The reverse pipe takes a string and reverses the order of the characters.</p>
     <span>
       This is a reverse string ('hello') using a custom pipe:
       {{ "hello" | reverse }}
     </span>
-  </div>
-  <div>
-  <div class="">
+  </section>
+  <section>
     <h2>AsyncPipe</h2>
     <p>This is an impure pipe that allows us to subscribe and unsubscribe to an observable (See observable page <a routerLink="../observables">here</a>). 
       Its syntactic sugar that also helps with avoiding memory leaks. 
     </p>
-    <span>
-    </span>
-  </div>
-  <div>
+    <span></span>
+  </section>
+  <section>
     <h2>Chaining Pipes</h2>
     <p>Its possible to chain, concat or combine pipes for almost endless data transformations.</p>
     <span>
       You can chain pipes (reverse + uppercase) with 'goodbye':
       {{ "goodbye" | reverse | uppercase }}
     </span>
-  </div>
-  <div class="">
+  </section>
+  <section>
     <h2>Custom Pipes</h2>
     <p>You can also create your own pipes to create even further powerful data manipulation!</p>
     <h3>Power Boost Calculator</h3>
-    <label for="power-input">Normal power: </label>
-    <input id="power-input" type="text" [(ngModel)]="value" />
-    <label for="boost-input">Boost factor: </label>
-    <input id="boost-input" type="text" [(ngModel)]="exponent" />
-    <p>Power Level: {{ value | exponentialPower : exponent}}</p>
-    <ng-container *ngIf="(value | exponentialPower: exponent) as result">
-      <img src="../../../assets/gifs/vegeta-its-over9000.gif" class="mat-caption" *ngIf="result > 9000">
-    </ng-container>
-  </div>
-</div>
+    <div>
+      <label for="power-input">Normal power: </label>
+      <input id="power-input" type="text" [(ngModel)]="value" />
+      <label for="boost-input">Boost factor: </label>
+      <input id="boost-input" type="text" [(ngModel)]="exponent" />
+      <p>Power Level: {{ value | exponentialPower : exponent}}</p>
+      <ng-container *ngIf="(value | exponentialPower: exponent) as result">
+        <img src="../../../assets/gifs/vegeta-its-over9000.gif" class="mat-caption" *ngIf="result > 9000">
+      </ng-container>
+    </div>
+  </section>
+</main>
+  
