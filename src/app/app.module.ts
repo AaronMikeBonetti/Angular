@@ -6,7 +6,6 @@ import { ReversePipe } from './pipes/reverse/reverse.pipe';
 import { ExponentialPowerPipe } from './pipes/exponential-power/exponential-power.pipe';
 import { PipeLessonComponent } from './components/pipe-lesson/pipe-lesson.component';
 import { FormsModule } from '@angular/forms';
-import { ViewChildLessonComponent } from './components/view-child-lesson/view-child-lesson.component';
 import { DecoratorLessonComponent } from './components/decorator-lesson/decorator-lesson-parent/decorator-lesson-parent.component';
 import { DirectivesLessonComponent } from './components/directives-lesson/directives-lesson.component';
 import { ObservableLessonComponent } from './components/observable-lesson/observable-lesson.component';
@@ -26,7 +25,6 @@ import { FooterComponent } from './components/footer/footer.component';
     ReversePipe,
     ExponentialPowerPipe,
     PipeLessonComponent,
-    ViewChildLessonComponent,
     DecoratorLessonComponent,
     DirectivesLessonComponent,
     ObservableLessonComponent,

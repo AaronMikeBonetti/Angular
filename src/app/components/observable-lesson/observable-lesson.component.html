@@ -1,1 +1,183 @@
-<main>observable-lesson works!</main>
+<main>
+  <section class="header-banner">
+    <img src="../../../assets/images/layout-25.png" />
+  </section>
+  <div class="content">
+    <section>
+      <h1>Observables Overview</h1>
+      <p>
+        Observables play a crucial role in handling asynchronous data streams,
+        event handling, and managing state within an Angular application. In
+        this article, we will delve into the world of Angular observables,
+        covering everything from their fundamental concepts to practical
+        implementation.
+      </p>
+    </section>
+    <section>
+      <h2>What is an Observable?</h2>
+      <p>
+        At its core, an observable is a representation of a stream of data or
+        events that can be observed over time. A good example of this is if you
+        turn on a radio to listen for the weather, the radio is the observable
+        that spits out the active weather as it changes. Observables are used to
+        handle asynchronous operations such as making HTTP requests, handling
+        user interactions, and managing data flow within an Angular application.
+        Observables offer a more flexible and robust way to work with
+        asynchronous data compared to traditional approaches like callbacks or
+        promises.
+      </p>
+    </section>
+    <section>
+      <h2>Creating Observables in Angular</h2>
+      <p>
+        In Angular, observables can be created using the Observable class from
+        the rxjs library. This library provides a comprehensive set of utilities
+        for working with asynchronous data streams. To create an observable, you
+        can use the following syntax:
+      </p>
+      <br />
+      <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="creatingObservableCode" >
+            </code>
+        </pre>
+    </section>
+
+    <section>
+      <h2>Subscribing to Observables</h2>
+      <p>
+        Subscribing to an observable is essential to start receiving and acting
+        upon emitted values. Looking back at the radio example, by turning on
+        the radio you are subscribing to the weather. The subscribe method
+        allows you to define the logic that should be executed whenever a new
+        value is emitted:
+      </p>
+      <br />
+      <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="subscribingCode" >
+            </code>
+        </pre>
+    </section>
+    <section>
+      <h2>Operators and Transformation</h2>
+      <p>
+        Observables provide a rich set of operators that enable you to
+        manipulate and transform the data emitted by the observable stream.
+        Operators like map, filter, merge, mergeMap, switchMap, concatMap, of,
+        reduce, and pluck allow you to modify the emitted values before they
+        reach the subscriber. Here are some examples:
+      </p>
+      <br />
+      <section>
+        <h3>map</h3>
+        <span> 
+            Transforms the emitted values using a given function. 
+        </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="mapOperatorCode" >
+            </code>
+        </pre>
+      </section>
+      <section>
+        <h3>filter</h3>
+        <span> 
+            Filters the emitted values based on a given condition. 
+        </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="filterOperatorCode" >
+            </code>
+        </pre>
+      </section>
+      <section>
+        <h3>merge</h3>
+        <span>
+          operator is used to combine multiple observables into a single
+          observable by emitting all the values from each source observable as
+          they arrive.
+        </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="mergeOperatorCode" >
+            </code>
+        </pre>
+      </section>
+      <section>
+        <h3>mergeMap</h3>
+        <span>
+          Projects each source value to an observable which is merged in the
+          output, in a serialized fashion waiting for each one to complete
+          before merging the next.
+        </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="mergeMapOperatorCode" >
+            </code>
+        </pre>
+      </section>
+      <section>
+        <h3>switchMap</h3>
+        <span>
+          Projects each source value to an observable, cancels previous inner
+          observables, and emits values only from the most recent inner
+          observable.
+        </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="switchMapOperatorCode">
+            </code>
+        </pre>
+      </section>
+      <section>
+        <h3>concatMap</h3>
+        <span>
+          Projects each source value to an observable which is merged in the
+          output, in a serialized fashion waiting for each one to complete
+          before merging the next.
+        </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="switchMapOperatorCode">
+            </code>
+        </pre>
+      </section>
+      <section>
+        <h3>of</h3>
+        <span>
+          Projects each source value to an observable which is merged in the
+          output, in a serialized fashion waiting for each one to complete
+          before merging the next.
+        </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="switchMapOperatorCode">
+            </code>
+        </pre>
+      </section>
+      <section>
+        <h3>reduce</h3>
+        <span>
+          Projects each source value to an observable which is merged in the
+          output, in a serialized fashion waiting for each one to complete
+          before merging the next.
+        </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="reduceOperatorCode">
+            </code>
+        </pre>
+      </section>
+      <section>
+        <h3>pluck</h3>
+        <span>
+          Projects each source value to an observable which is merged in the
+          output, in a serialized fashion waiting for each one to complete
+          before merging the next.
+        </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="pluckOperatorCode">
+            </code>
+        </pre>
+      </section>
+    </section>
+    <!-- <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul> -->
+  </div>
+</main>

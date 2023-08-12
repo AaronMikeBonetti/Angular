@@ -1,7 +1,7 @@
-// Synchronous tasks happen in order 
+// Synchronous tasks happen in order
 //(checking window for rain, get response immediately)
 
-// Asynchronous tasks are taken out of the stack and resolved in parallel with the stack, eventually returning something to the stack 
+// Asynchronous tasks are taken out of the stack and resolved in parallel with the stack, eventually returning something to the stack
 // (ask someone to check weather, you can continue whatever till they tell you the weather)
 
 // Promises are a way of dealing with asynchronous data or tasks. Can not be canceled and can only return one response
@@ -25,19 +25,153 @@
 //A consumer is the one 'consuming the data
 //(you are the consumer)
 
-
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-observable-lesson',
   templateUrl: './observable-lesson.component.html',
-  styleUrls: ['./observable-lesson.component.scss']
+  styleUrls: ['./observable-lesson.component.scss'],
 })
 export class ObservableLessonComponent implements OnInit {
+  
+  creatingObservableCode: string = `
+  import { Observable } from 'rxjs';
 
-  constructor() { }
+  const myObservable = new Observable((observer) => {
+    // Emit values using observer methods
+    observer.next('Hello');
+    observer.next('World');
+    // ...
+    });
+  }`
 
-  ngOnInit(): void {
-  }
+  subscribingCode: string = `
+  myObservable.subscribe(
+    (value) => {
+      console.log(value); // Output: Hello, World
+    },
+    (error) => {
+      console.error(error);
+    },
+    () => {
+      console.log('Observable completed');
+    }
+  );`
 
+  mapOperatorCode: string = `
+    import { of } from 'rxjs';
+    import { map } from 'rxjs/operators';
+
+    const numbers = of(1, 2, 3, 4, 5);
+
+    numbers.pipe(
+      map((value) => value * 2)
+    ).subscribe((result) => {
+      console.log(result); // Output: 2, 4, 6, 8, 10
+    });`
+
+  filterOperatorCode: string = `
+    import { of } from 'rxjs';
+    import { filter } from 'rxjs/operators';
+
+    const numbers = of(1, 2, 3, 4, 5);
+
+    numbers.pipe(
+      filter((value) => value % 2 === 0)
+    ).subscribe((result) => {
+      console.log(result); // Output: 2, 4
+    });`
+
+  mergeOperatorCode: string = `
+    import { of } from 'rxjs';
+    import { mergeMap } from 'rxjs/operators';
+
+    const letters = of('a', 'b', 'c');
+
+    letters.pipe(
+      mergeMap((letter) => of('letter.toUpperCase() letter.toLowerCase()'))
+    ).subscribe((result) => {
+      console.log(result); // Output: Aa, Bb, Cc
+    });`
+  mergeMapOperatorCode: string = `
+    import { of } from 'rxjs';
+    import { mergeMap } from 'rxjs/operators';
+
+    const letters = of('a', 'b', 'c');
+
+    letters.pipe(
+      mergeMap((letter) => of(letter.toUpperCase() letter.toLowerCase()))
+    ).subscribe((result) => {
+      console.log(result); // Output: Aa, Bb, Cc
+    });
+  `
+  switchMapOperatorCode: string = `
+    import { of, interval } from 'rxjs';
+    import { switchMap } from 'rxjs/operators';
+
+    const source = of(1, 2, 3);
+
+    source.pipe(
+      switchMap(value => interval(value * 1000).pipe(take(2)))
+    ).subscribe(result => {
+      console.log(result); // Output: 0, 0, 1, 0, 1, 2
+    });
+  `
+
+  concatMapOperatorCode: string = `
+    import { of } from 'rxjs';
+    import { concatMap } from 'rxjs/operators';
+
+    const source = of(2000, 1000);
+
+    source.pipe(
+      concatMap(val => of('Delayed by: (val)ms').pipe(delay(val)))
+    ).subscribe(result => {
+      console.log(result); // Output delayed messages in sequence
+    });`
+
+  ofOperatorCode: string = `
+    import { of } from 'rxjs';
+
+    const observable = of(1, 2, 3, 4, 5);
+
+    observable.subscribe(value => {
+      console.log(value); // Outputs: 1, 2, 3, 4, 5
+    }, error => {
+      console.error(error);
+    }, () => {
+      console.log('Observable completed');
+    });`
+
+  reduceOperatorCode: string = `
+    import { of } from 'rxjs';
+    import { reduce } from 'rxjs/operators';
+
+    const source = of(1, 2, 3, 4);
+
+    source.pipe(
+      reduce((acc, value) => acc + value, 0)
+    ).subscribe(result => {
+      console.log(result); // Output: 10 (1 + 2 + 3 + 4)
+    });`
+
+  pluckOperatorCode: string = `
+    import { from } from 'rxjs';
+    import { pluck } from 'rxjs/operators';
+
+    const data = [
+      { name: 'Alice', age: 28 },
+      { name: 'Bob', age: 22 },
+      { name: 'Charlie', age: 31 }
+    ];
+
+    from(data).pipe(
+      pluck('name')
+    ).subscribe(name => {
+      console.log(name); // Output: Alice, Bob, Charlie
+    });`
+
+  constructor() {}
+
+  ngOnInit(): void {}
 }

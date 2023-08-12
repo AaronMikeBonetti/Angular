@@ -11,7 +11,7 @@ export class RoutingLessonComponent implements OnInit {
 
   constructor(private sanitizer: DomSanitizer) { }
 
-  public routingModuleCode = `
+  public routingModuleCode:string = `
     import { NgModule } from '@angular/core';
     import { RouterModule, Routes } from '@angular/router';
     import { HomeComponent } from './components/home/home.component';
