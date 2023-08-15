@@ -76,6 +76,9 @@
             <code [innerHTML]="mapOperatorCode" >
             </code>
         </pre>
+        <ul *ngFor="let number of mapObservableData">
+          <li>{{number}}</li>
+        </ul>
       </section>
       <section>
         <h3>filter</h3>
@@ -86,18 +89,9 @@
             <code [innerHTML]="filterOperatorCode" >
             </code>
         </pre>
-      </section>
-      <section>
-        <h3>merge</h3>
-        <span>
-          operator is used to combine multiple observables into a single
-          observable by emitting all the values from each source observable as
-          they arrive.
-        </span>
-        <pre class="dark" id="code-snippet" role="presentation">
-            <code [innerHTML]="mergeOperatorCode" >
-            </code>
-        </pre>
+        <ul *ngFor="let number of filterObservableData">
+          <li>{{number}}</li>
+        </ul>
       </section>
       <section>
         <h3>mergeMap</h3>
@@ -110,6 +104,9 @@
             <code [innerHTML]="mergeMapOperatorCode" >
             </code>
         </pre>
+        <ul *ngFor="let letters of mergeMapObservableData">
+          <li>{{letters}}</li>
+        </ul>
       </section>
       <section>
         <h3>switchMap</h3>
