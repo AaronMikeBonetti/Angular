@@ -27,7 +27,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval, of } from 'rxjs';
-import { filter, map, mergeMap, switchMap, take } from 'rxjs/operators';
+import { concatMap, delay, filter, map, mergeMap, switchMap, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-observable-lesson',
@@ -42,6 +42,7 @@ export class ObservableLessonComponent implements OnInit {
   filterObservableData: number[] = [];
   mergeMapObservableData: string[] = [];
   switchMapObservableData: any[] = [];
+  concatMapObservableData: any[] = []
 
   creatingObservableCode: string = `
   import { Observable } from 'rxjs';
@@ -102,11 +103,16 @@ export class ObservableLessonComponent implements OnInit {
       this.mergeMapObservableData.push(result)
     });
   `;
+
   switchMapOperatorCode: string = `
+  import { switchMap } from 'rxjs/operators';
+
+  this.numbersObservable = of(1, 2, 3, 4, 5);
+
   this.numbersObservable$
       .pipe(
         switchMap((number) => {
-          setTimeout(()=>this.switchMapObservableData.push(number), 2000);
+          setTimeout(()=>this.switchMapObservableData.push(number), 10000);
           return this.lettersObservable$;
         })
       )
@@ -119,13 +125,18 @@ export class ObservableLessonComponent implements OnInit {
     import { of } from 'rxjs';
     import { concatMap } from 'rxjs/operators';
 
-    source = of(2000, 1000);
+    this.numbersObservable = of(1, 2, 3, 4, 5);
 
-    source.pipe(
-      concatMap(val => of('Delayed by: (val)ms').pipe(delay(val)))
-    ).subscribe(result => {
-      console.log(result); // Output delayed messages in sequence
-    });`;
+    this.numbersObservable$
+      .pipe(
+        concatMap((number) => {
+          this.concatMapObservableData.push(number)
+          return this.lettersObservable$.pipe(delay(4000));
+        })
+      )
+      .subscribe(letter => this.concatMapObservableData.push(letter)
+      );
+    }`
 
   ofOperatorCode: string = `
     import { of } from 'rxjs';
@@ -199,11 +210,27 @@ export class ObservableLessonComponent implements OnInit {
     this.numbersObservable$
       .pipe(
         switchMap((number) => {
-          setTimeout(()=>this.switchMapObservableData.push(number), 2000);
-          return this.lettersObservable$;
+          this.switchMapObservableData.push(number)
+          return this.lettersObservable$.pipe(delay(15000));
         })
       )
-      .subscribe(letter => this.switchMapObservableData = [letter]
+      .subscribe((letter) => {
+        this.switchMapObservableData = [letter]
+        console.log('switch map changed value!')
+        }
+      );
+
+      //concatMap
+      this.numbersObservable$
+      .pipe(
+        concatMap((number) => {
+          this.concatMapObservableData.push(number)
+          return this.lettersObservable$.pipe(delay(4000));
+        })
+      )
+      .subscribe(letter => this.concatMapObservableData.push(letter)
       );
     }
+
+    
 }

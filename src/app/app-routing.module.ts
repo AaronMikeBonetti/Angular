@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DecoratorLessonComponent } from './components/decorator-lesson/decorator-lesson-parent/decorator-lesson-parent.component';
-import { DirectivesLessonComponent } from './components/directives-lesson/directives-lesson.component';
-import { HomeComponent } from './components/home/home.component';
-import { ObservableLessonComponent } from './components/observable-lesson/observable-lesson.component';
-import { RxjsLessonComponent } from './components/rxjs-lesson/rxjs-lesson.component';
-import { PipeLessonComponent } from './components/pipe-lesson/pipe-lesson.component';
-import { NgrxLessonComponent } from './components/ngrx-lesson/ngrx-lesson.component';
-import { RoutingLessonComponent } from './components/routing-lesson/routing-lesson.component';
-import { LifeCycleHooksLessonComponent } from './components/life-cycle-hooks-lesson/life-cycle-hooks-lesson.component';
+import { DecoratorLessonComponent } from './modules/decorator-lesson/components/decorator-lesson-parent/decorator-lesson-parent.component';
+import { DirectivesLessonComponent } from './modules/directives-lesson/components/directives-lesson.component';
+import { HomeComponent } from './modules/home/components/home.component';
+import { LifeCycleHooksLessonComponent } from './modules/life-cycle-hooks-lesson/components/life-cycle-hooks-lesson.component';
+import { NgrxLessonComponent } from './modules/ngrx-lesson/components/ngrx-lesson.component';
+import { ObservableLessonComponent } from './modules/observable-lesson/components/observable-lesson.component';
+import { PipeLessonComponent } from './modules/pipe-lesson/components/pipe-lesson.component';
+import { RoutingLessonComponent } from './modules/routing-lesson/components/routing-lesson.component';
+import { RxjsLessonComponent } from './modules/rxjs-lesson/components/rxjs-lesson.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

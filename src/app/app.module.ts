@@ -1,51 +1,45 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReversePipe } from './pipes/reverse/reverse.pipe';
-import { ExponentialPowerPipe } from './pipes/exponential-power/exponential-power.pipe';
-import { PipeLessonComponent } from './components/pipe-lesson/pipe-lesson.component';
-import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import { DecoratorLessonComponent } from './components/decorator-lesson/decorator-lesson-parent/decorator-lesson-parent.component';
-import { DirectivesLessonComponent } from './components/directives-lesson/directives-lesson.component';
-import { ObservableLessonComponent } from './components/observable-lesson/observable-lesson.component';
-import { NgrxLessonComponent } from './components/ngrx-lesson/ngrx-lesson.component';
-import { RxjsLessonComponent } from './components/rxjs-lesson/rxjs-lesson.component';
-import { HomeComponent } from './components/home/home.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { RoutingLessonComponent } from './components/routing-lesson/routing-lesson.component';
-import { LifeCycleHooksLessonComponent } from './components/life-cycle-hooks-lesson/life-cycle-hooks-lesson.component';
-import { DecoratorLessonChildComponent } from './components/decorator-lesson/decorator-lesson-child/decorator-lesson-child.component';
-import { HoverDirective } from './components/directives-lesson/hover.directive';
-import { FooterComponent } from './components/footer/footer.component';
-
+import { DecoratorLessonModule } from './modules/decorator-lesson/modules/decorator-lesson.module';
+import { DirectivesLessonModule } from './modules/directives-lesson/modules/directives-lesson.module';
+import { ExponentialPowerPipe } from './shared/pipes/exponential-power/exponential-power.pipe';
+import { ReversePipe } from './shared/pipes/reverse/reverse.pipe';
+import { FooterComponent } from './modules/footer/components/footer.component';
+import { HomeComponent } from './modules/home/components/home.component';
+import { LifeCycleHooksLessonComponent } from './modules/life-cycle-hooks-lesson/components/life-cycle-hooks-lesson.component';
+import { NavBarComponent } from './modules/nav-bar/components/nav-bar.component';
+import { NgrxLessonComponent } from './modules/ngrx-lesson/components/ngrx-lesson.component';
+import { ObservableLessonComponent } from './modules/observable-lesson/components/observable-lesson.component';
+import { PipeLessonComponent } from './modules/pipe-lesson/components/pipe-lesson.component';
+import { RoutingLessonComponent } from './modules/routing-lesson/components/routing-lesson.component';
+import { RxjsLessonComponent } from './modules/rxjs-lesson/components/rxjs-lesson.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ReversePipe,
     ExponentialPowerPipe,
-    PipeLessonComponent,
-    DecoratorLessonComponent,
-    DirectivesLessonComponent,
-    ObservableLessonComponent,
-    NgrxLessonComponent,
-    RxjsLessonComponent,
-    HomeComponent,
-    NavBarComponent,
-    RoutingLessonComponent,
-    LifeCycleHooksLessonComponent,
-    DecoratorLessonChildComponent,
-    HoverDirective,
     FooterComponent,
+    HomeComponent,
+    LifeCycleHooksLessonComponent,
+    NavBarComponent,
+    NgrxLessonComponent,
+    ObservableLessonComponent,
+    PipeLessonComponent,
+    ReversePipe,
+    RoutingLessonComponent,
+    RxjsLessonComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
+    AppRoutingModule, 
+    BrowserModule, 
+    FormsModule, 
+    HttpClientModule,
+    DecoratorLessonModule,
+    DirectivesLessonModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
