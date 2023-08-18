@@ -26,8 +26,8 @@
 //(you are the consumer)
 
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import {filter, map, mergeMap } from 'rxjs/operators'
+import { Observable, interval, of } from 'rxjs';
+import { filter, map, mergeMap, switchMap, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-observable-lesson',
@@ -35,14 +35,14 @@ import {filter, map, mergeMap } from 'rxjs/operators'
   styleUrls: ['./observable-lesson.component.scss'],
 })
 export class ObservableLessonComponent implements OnInit {
+  numbersObservable$: Observable<number> = of(1, 2, 3, 4, 5);
+  lettersObservable$: Observable<string> = of('a', 'b', 'c');
 
-  numbersObservable: Observable<number> = of(1, 2, 3, 4, 5);
-  lettersObservable: Observable<string> = of('a', 'b', 'c')
+  mapObservableData: number[] = [];
+  filterObservableData: number[] = [];
+  mergeMapObservableData: string[] = [];
+  switchMapObservableData: any[] = [];
 
-  mapObservableData: number[] = []
-  filterObservableData: number[] = []
-  mergeMapObservableData: string[] = []
-  
   creatingObservableCode: string = `
   import { Observable } from 'rxjs';
 
@@ -52,7 +52,7 @@ export class ObservableLessonComponent implements OnInit {
     observer.next('World');
     // ...
     });
-  }`
+  }`;
 
   subscribingCode: string = `
   myObservable.subscribe(
@@ -65,7 +65,7 @@ export class ObservableLessonComponent implements OnInit {
     () => {
       console.log('Observable completed');
     }
-  );`
+  );`;
 
   mapOperatorCode: string = `
     import { of } from 'rxjs';
@@ -77,7 +77,7 @@ export class ObservableLessonComponent implements OnInit {
       map((value) => value * 2)
     ).subscribe((result) => {
       this.mapObserverData.push(result)
-    });`
+    });`;
 
   filterOperatorCode: string = `
     import { of } from 'rxjs';
@@ -88,7 +88,7 @@ export class ObservableLessonComponent implements OnInit {
     this.numbersObservable.pipe(
       filter(value => value > 2)).subscribe(result => 
       this.filterObservableData.push(result))
-  }`
+  }`;
 
   mergeMapOperatorCode: string = `
     import { of } from 'rxjs';
@@ -101,19 +101,19 @@ export class ObservableLessonComponent implements OnInit {
     ).subscribe((result) => {
       this.mergeMapObservableData.push(result)
     });
-  `
+  `;
   switchMapOperatorCode: string = `
-    import { of, interval } from 'rxjs';
-    import { switchMap } from 'rxjs/operators';
-
-    source = of(1, 2, 3);
-
-    source.pipe(
-      switchMap(value => interval(value * 1000).pipe(take(2)))
-    ).subscribe(result => {
-      console.log(result); // Output: 0, 0, 1, 0, 1, 2
-    });
-  `
+  this.numbersObservable$
+      .pipe(
+        switchMap((number) => {
+          setTimeout(()=>this.switchMapObservableData.push(number), 2000);
+          return this.lettersObservable$;
+        })
+      )
+      .subscribe(letter => this.switchMapObservableData = [letter]
+      );
+  }
+  `;
 
   concatMapOperatorCode: string = `
     import { of } from 'rxjs';
@@ -125,7 +125,7 @@ export class ObservableLessonComponent implements OnInit {
       concatMap(val => of('Delayed by: (val)ms').pipe(delay(val)))
     ).subscribe(result => {
       console.log(result); // Output delayed messages in sequence
-    });`
+    });`;
 
   ofOperatorCode: string = `
     import { of } from 'rxjs';
@@ -138,7 +138,7 @@ export class ObservableLessonComponent implements OnInit {
       console.error(error);
     }, () => {
       console.log('Observable completed');
-    });`
+    });`;
 
   reduceOperatorCode: string = `
     import { of } from 'rxjs';
@@ -150,7 +150,7 @@ export class ObservableLessonComponent implements OnInit {
       reduce((acc, value) => acc + value, 0)
     ).subscribe(result => {
       console.log(result); // Output: 10 (1 + 2 + 3 + 4)
-    });`
+    });`;
 
   pluckOperatorCode: string = `
     import { from } from 'rxjs';
@@ -166,28 +166,44 @@ export class ObservableLessonComponent implements OnInit {
       pluck('name')
     ).subscribe(name => {
       console.log(name); // Output: Alice, Bob, Charlie
-    });`
-  
-  
+    });`;
 
   constructor() {}
 
   ngOnInit(): void {
-    
-    this.numbersObservable.pipe(
-      map(value => value * 2))
+    //Map
+
+    this.numbersObservable$
+      .pipe(map((value) => value * 2))
       .subscribe((result) => {
-      this.mapObservableData.push(result)
-    });
-
-    this.numbersObservable.pipe(
-      filter(value => value > 2)).subscribe(result => 
-      this.filterObservableData.push(result))
-
-      this.lettersObservable.pipe(
-        mergeMap((letter) => of(letter.toUpperCase() + letter.toLowerCase()))
-      ).subscribe((result) => {
-        this.mergeMapObservableData.push(result)
+        this.mapObservableData.push(result);
       });
-  }
+
+    //Filter
+
+    this.numbersObservable$
+      .pipe(filter((value) => value > 2))
+      .subscribe((result) => this.filterObservableData.push(result));
+
+    //mergeMap
+
+    this.lettersObservable$
+      .pipe(
+        mergeMap((letter) => of(letter.toUpperCase() + letter.toLowerCase()))
+      )
+      .subscribe((result) => {
+        this.mergeMapObservableData.push(result);
+      });
+
+    //switchMap
+    this.numbersObservable$
+      .pipe(
+        switchMap((number) => {
+          setTimeout(()=>this.switchMapObservableData.push(number), 2000);
+          return this.lettersObservable$;
+        })
+      )
+      .subscribe(letter => this.switchMapObservableData = [letter]
+      );
+    }
 }

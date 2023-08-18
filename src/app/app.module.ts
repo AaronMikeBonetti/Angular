@@ -6,6 +6,7 @@ import { ReversePipe } from './pipes/reverse/reverse.pipe';
 import { ExponentialPowerPipe } from './pipes/exponential-power/exponential-power.pipe';
 import { PipeLessonComponent } from './components/pipe-lesson/pipe-lesson.component';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { DecoratorLessonComponent } from './components/decorator-lesson/decorator-lesson-parent/decorator-lesson-parent.component';
 import { DirectivesLessonComponent } from './components/directives-lesson/directives-lesson.component';
 import { ObservableLessonComponent } from './components/observable-lesson/observable-lesson.component';
@@ -42,6 +43,7 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

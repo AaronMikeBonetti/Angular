@@ -119,6 +119,9 @@
             <code [innerHTML]="switchMapOperatorCode">
             </code>
         </pre>
+        <ul *ngFor="let item of switchMapObservableData">
+          <li>{{item}}</li>
+        </ul>
       </section>
       <section>
         <h3>concatMap</h3>
