@@ -1,0 +1,93 @@
+<main class="decorator-contatiner">
+    <section>
+        <h1>Forms Overview</h1>
+    <p>
+        <br>
+        <span></span>
+    </p>
+    </section>
+    <section>
+        <form [formGroup]="myForm" (ngSubmit)="handleSubmit()">
+            Value: {{myForm.value | json}}
+            <hr>
+
+            <mat-form-field>
+                <input matInput placeholder="email" formControlName="email">
+                <mat-error *ngIf="email?.invalid && email?.untouched">
+                    Your Email Is Incorrect
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="password" formControlName="password">
+                <mat-hint align="end">Your Password needs a minimum eight characters, at least one letter, one number and one special character</mat-hint>
+                <mat-error *ngIf="password?.invalid && password?.untouched">
+                    Your Password Sucks...
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="age" formControlName="age">
+                <mat-error *ngIf="age?.errors?.min && age?.touched">
+                    {{ age?.errors?.min.actual }} Is Too Young To Use this App
+                </mat-error>
+                <mat-error *ngIf="age?.errors?.max && age?.touched">
+                    {{ age?.errors?.min.actual }} Is too Old To use this App
+                </mat-error>
+                <mat-error *ngIf="age?.untouched">
+                    Please Add Age
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput placeholder="message" formControlName="message"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select placeholder="career" formControlName="career"></mat-select>
+            </mat-form-field>
+
+            <div formGroupName="cellPhone">
+                <mat-form-field>
+                    <input matInput placeholder="area" formControlName="area">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="prefix" formControlName="prefix">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="line" formControlName="line">
+                </mat-form-field>
+            </div>
+            <div formGroupName="homePhone">
+                <mat-form-field>
+                    <input matInput placeholder="area" formControlName="area">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="prefix" formControlName="prefix">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="line" formControlName="line">
+                </mat-form-field>
+            </div>
+            <div formArrayName="otherPhones">
+                <div *ngFor="let phones of otherPhones.controls; let i=index" [formGroupName]="i"]>
+                    <mat-form-field>
+                        <input matInput placeholder="area" formControlName="area">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="prefix" formControlName="prefix">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="line" formControlName="line">
+                    </mat-form-field>
+                    <button mat-raised-button color="warn" (click)="deleteOtherPhones(i)"></button>
+                </div>
+                <button mat-raised-button color="primary" (click)="addOtherPhones()">Add Phone </button>
+            </div>
+            <mat-form-field>
+                <mat-checkbox formControlName="agree"></mat-checkbox>
+                <mat-error *ngIf="agree?.invalid && agree?.untouched">
+
+                </mat-error>
+            </mat-form-field>
+            <button [disabled]="myForm.invalid" color="primary" type="submit">Submit</button>
+        </form>
+    </section>
+</main>
+

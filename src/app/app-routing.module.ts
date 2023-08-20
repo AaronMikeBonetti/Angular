@@ -9,12 +9,14 @@ import { ObservableLessonComponent } from './modules/observable-lesson/component
 import { PipeLessonComponent } from './modules/pipe-lesson/components/pipe-lesson.component';
 import { RoutingLessonComponent } from './modules/routing-lesson/components/routing-lesson.component';
 import { RxjsLessonComponent } from './modules/rxjs-lesson/components/rxjs-lesson.component';
+import { FormsLessonComponent } from './modules/forms-lesson/components/forms-lesson.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'decorators', component: DecoratorLessonComponent},
   {path: 'directives', component: DirectivesLessonComponent},
   {path: 'pipes', component: PipeLessonComponent},
+  {path: 'forms', component: FormsLessonComponent},
   {path: 'observables', component: ObservableLessonComponent},
   {path: 'routing', component: RoutingLessonComponent},
   {path: 'life-cycle-hooks', component: LifeCycleHooksLessonComponent},
