@@ -1,97 +1,100 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup ,FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-forms-lesson',
   templateUrl: './forms-lesson.component.html',
-  styleUrls: ['./forms-lesson.component.scss']
+  styleUrls: ['./forms-lesson.component.scss'],
 })
 export class FormsLessonComponent implements OnInit {
-
   myForm: FormGroup;
+  careers: string[] = ['Dentist', 'Police Man', 'Astronaut'];
+  errorMessage: any;
+  postId: any;
 
-  constructor(
-    private fb: FormBuilder
-  ) { }
+  constructor(private fb: FormBuilder, private http: HttpClient) {}
 
   ngOnInit(): void {
-
     const phone = this.fb.group({
       area: [],
       prefix: [],
-      line: []
-    })
+      line: [],
+    });
 
     this.myForm = this.fb.group({
-      email: [
-        '',
-        Validators.required,
-        Validators.email 
-      ],
-      password: [
-        '',
-        Validators.required,
-        Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")
-      ],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.pattern('^\\d{1,4}$')]],
       age: [
-        null, 
-        Validators.required,
-        Validators.minLength(2),
-        Validators.min(18),
-        Validators.max(99)
+        null,
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.min(18),
+          Validators.max(99),
+        ],
       ],
       message: '',
-      career: '',
+      career: ['', [Validators.required]],
       homePhone: phone,
       cellPhone: phone,
-      otherPhones: this.fb.array([]),
-      agree: [
-        false,
-        Validators.requiredTrue
-      ]
-    })
+    });
 
-    this.myForm.valueChanges.subscribe(console.log)
+    this.myForm.valueChanges.subscribe(console.log);
   }
 
   get otherPhones() {
-    return this.myForm.get('otherPhones') as FormArray
+    return this.myForm.get('otherPhones') as FormArray;
   }
 
   get email() {
-    return this.myForm.get('email')
+    return this.myForm.get('email');
   }
 
   get password() {
-    return this.myForm.get('password')
+    return this.myForm.get('password');
   }
 
-  get age () {
-    return this.myForm.get('age')
+  get age() {
+    return this.myForm.get('age');
   }
 
-  get agree () {
-    return this.myForm.get('agree')
+  get career() {
+    return this.myForm.get('career');
   }
 
-  get homePhone () {
-    return this.myForm.get('homePhone')
+  get agree() {
+    return this.myForm.get('agree');
   }
 
-  addOtherPhones(){
-    const otherPhones = this.fb.group({
-      area: [],
-      prefix: [],
-      line: []
-    })
-    this.otherPhones.push(otherPhones)
-  }
-  deleteOtherPhones(index){
-    this.otherPhones.removeAt(index)
+  get homePhone() {
+    return this.myForm.get('homePhone');
   }
 
-  handleSubmit(){
-   alert('Form Submitted')
+  handleSubmit() {
+    if (this.myForm.valid) {
+      const myToken = '123456';
+      const headers = { Authorization: `Bearer ${myToken}` };
+      const baseUrl = 'www.whatever.com';
+      const userName = 'John';
+      this.http
+        .post(baseUrl + 'users/' + userName + '/repos', this.myForm, {
+          headers,
+        })
+        .pipe(
+          catchError((error: any, caught: Observable<any>): Observable<any> => {
+            this.errorMessage = error.message;
+            console.error('There was an error!', error);
+            return of();
+          })
+        )
+        .subscribe((data) => {
+          this.postId = data.id;
+        });
+    } else {
+      console.log('form not valid');
+    }
   }
-
 }
