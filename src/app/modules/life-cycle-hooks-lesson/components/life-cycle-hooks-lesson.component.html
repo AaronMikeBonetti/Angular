@@ -1,1 +1,111 @@
-<main>life-cycle-hooks-lesson works!</main>
+<main>
+  <section>
+    <h1>Life-Cycle Hooks Lesson</h1>
+    <p>
+      Life-cycle hooks are used to invoke specific code based on where in the
+      process the component that is being mounted is at.
+      <br />
+      <span>
+        Example: The first life-cycle hook to be called is called ngOnChange and
+        it listens for changes made to input properties in the application, like
+        routing to a new page.
+      </span>
+    </p>
+    <h3>There are 8 types</h3>
+    <ul>
+      <li>ngOnChange</li>
+      <li>ngOnInit</li>
+      <li>ngDoCheck</li>
+      <li>ngAfterContentInit</li>
+      <li>ngAfterContentChecked</li>
+      <li>ngAfterViewInit</li>
+      <li>ngAfterViewChecked</li>
+      <li>ngOnDestroy</li>
+    </ul>
+    <p>
+      If you check the console (right click, inspect or Command+Option+i on your
+      Mac or F12 on your PC) you can see the order that the different life-cycle
+      hooks are being called.
+    </p>
+  </section>
+  <section>
+    <h2>ngOnChange</h2>
+    <p>
+      Called whenever Angular detects changes to input properties of a
+      component. It receives a SimpleChanges object, which allows you to access
+      the previous and current values of the inputs.
+    </p>
+  </section>
+  <section>
+    <h2>ngOnInit</h2>
+    <p>
+      Called after Angular has initialized the component and its input
+      properties. This is a good place for initial setup, making HTTP requests,
+      and any logic that needs to run after the component is created but before
+      it's rendered.
+    </p>
+  </section>
+  <section>
+    <h2>ngDoCheck</h2>
+    <p>
+      Called during every change detection cycle, which gives you
+      fine-grained control over how your component responds to changes. You can
+      use it to perform checks and updates that Angular's default change
+      detection mechanism might miss. Over using this hook can cause performance
+      issues.
+    </p>
+  </section>
+  <section>
+    <h2>ngAfterContentInit</h2>
+    <p>
+      Called after Angular projects external content (i.e., content that is
+      passed into a component via content projection like a parent component
+      passing data to a child component) into the component's view. This hook is
+      useful when you want to perform initialization or interact with the
+      projected content before the component's view is fully initialized.
+    </p>
+  </section>
+  <section>
+    <h2>ngAfterContentChecked</h2>
+    <p>
+      Called after Angular has checked the content projected into a component
+      and its child components. This hook allows you to perform actions or
+      checks after the projected content has been rendered or updated. It's
+      called during each change detection cycle, so you should be cautious when
+      using it to avoid causing performance issues.
+    </p>
+  </section>
+  <section>
+    <h2>ngViewViewInit</h2>
+    <p>
+      Called after Angular has initialized the component's view and child views.
+      It is an excellent place to interact with the DOM elements rendered by the
+      component, perform any necessary DOM manipulations, or integrate with
+      third-party libraries that require access to the view.
+    </p>
+  </section>
+  <section>
+    <h2>ngViewViewChecked</h2>
+    <p>
+      Called after Angular projects external content (i.e., content that is
+      passed into a component via content projection like a parent component
+      passing data to a child component) into the component's view. This hook is
+      useful when you want to perform initialization or interact with the
+      projected content before the component's view is fully initialized.
+    </p>
+  </section>
+  <section>
+    <h2>ngOnDestroy</h2>
+    <p>
+      Called just before a component is destroyed and removed from the DOM. It
+      provides an opportunity to perform cleanup tasks, unsubscribe from
+      observables, release resources, or perform any necessary teardown
+      operations to prevent memory leaks or resource leaks. It is an essential
+      part of Angular's component lifecycle and is commonly used to ensure that
+      a component's resources are properly disposed of when it is no longer
+      needed.
+    </p>
+    <br>
+    <p>If you route to a different page in the application you will see it console log that it was invoked.</p>
+  </section>
+</main>

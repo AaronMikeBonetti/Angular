@@ -18,6 +18,8 @@ export class FormsLessonComponent implements OnInit {
   constructor(private fb: FormBuilder, private http: HttpClient) {}
 
   ngOnInit(): void {
+
+    console.log(this.fb)
     const phone = this.fb.group({
       area: [],
       prefix: [],
@@ -45,10 +47,6 @@ export class FormsLessonComponent implements OnInit {
     this.myForm.valueChanges.subscribe(console.log);
   }
 
-  get otherPhones() {
-    return this.myForm.get('otherPhones') as FormArray;
-  }
-
   get email() {
     return this.myForm.get('email');
   }
@@ -70,6 +68,10 @@ export class FormsLessonComponent implements OnInit {
   }
 
   get homePhone() {
+    return this.myForm.get('homePhone');
+  }
+
+  get cellPhone() {
     return this.myForm.get('homePhone');
   }
 

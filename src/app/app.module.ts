@@ -26,6 +26,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCheckboxModule} from '@angular/material/checkbox'
 import { MatChipsModule} from '@angular/material/chips'
 import { CommonModule } from '@angular/common';
+import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { CommonModule } from '@angular/common';
     ReversePipe,
     RoutingLessonComponent,
     RxjsLessonComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     AppRoutingModule, 

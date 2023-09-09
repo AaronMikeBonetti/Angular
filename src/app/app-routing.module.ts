@@ -10,6 +10,7 @@ import { PipeLessonComponent } from './modules/pipe-lesson/components/pipe-lesso
 import { RoutingLessonComponent } from './modules/routing-lesson/components/routing-lesson.component';
 import { RxjsLessonComponent } from './modules/rxjs-lesson/components/rxjs-lesson.component';
 import { FormsLessonComponent } from './modules/forms-lesson/components/forms-lesson.component';
+import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'life-cycle-hooks', component: LifeCycleHooksLessonComponent},
   {path: 'rxjs', component: RxjsLessonComponent},
   {path: 'ngrx', component: NgrxLessonComponent},
-  
+  { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
+
 ];
 
 @NgModule({

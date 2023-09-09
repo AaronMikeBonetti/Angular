@@ -4,7 +4,7 @@
     <p>
       Directives are classes that add additional behavior to elements in the the
       angular application, basically directives are used to manipulate the DOM.
-      <br>
+      <br />
       <span>
         Example: add element, delete element, hide element, loop element ect.
       </span>
@@ -24,27 +24,26 @@
       component would be considered a directive. It takes data and maps it to
       the DOM.
     </p>
-    <div>
-      <h2>Structural Directive</h2>
-      <p>
-        Used in the template to change the DOM layout
-        <br />
-        <span
-          >Example: ngFor, which renders a list element or maps it on every
-          iteration or a ngIf which displays something based on a
-          condition
-        </span>
-      </p>
-      <h3>ngFor</h3>
-      <ul *ngFor="let name of names">
-        <li>{{ name }}</li>
-      </ul>
-      <h3>ngIf</h3>
-      <div *ngIf="!hidden">
-        <span>HERE I AM</span>
-      </div>
-      <button (click)="hideText()">{{ buttonLabel }}</button>
+  </section>
+  <section>
+    <h2>Structural Directive</h2>
+    <p>
+      Used in the template to change the DOM layout
+      <br />
+      <span
+        >Example: ngFor, which renders a list element or maps it on every
+        iteration or a ngIf which displays something based on a condition
+      </span>
+    </p>
+    <h3>ngFor</h3>
+    <ul *ngFor="let name of names">
+      <li>{{ name }}</li>
+    </ul>
+    <h3>ngIf</h3>
+    <div *ngIf="!hidden">
+      <span>HERE I AM</span>
     </div>
+    <button (click)="hideText()">{{ buttonLabel }}</button>
   </section>
   <section>
     <h2>Attribute</h2>
@@ -54,12 +53,18 @@
       <span>
         Example: ngStyle, used to apply styles to change the appearance or
         ngModel which creates a FormControl instance on an element, this allows
-        allows for us to track the values or user interaction with an
-        element
+        for us to track the values or user interaction with an element
       </span>
     </p>
     <div>
-      <span [ngStyle]="{ 'color': color, 'font-family': 'cursive', 'transform': 'scale(0.8)', 'transition': 'all 3s'  }">
+      <span
+        [ngStyle]="{
+          color: color,
+          'font-family': 'cursive',
+          transform: 'scale(0.8)',
+          transition: 'all 3s'
+        }"
+      >
         This is being styled by [ngStyle]
       </span>
     </div>
@@ -67,13 +72,13 @@
   <section>
     <h2>Custom</h2>
     <p>
-        You can create your own directives just like a class or service.
-        <br>
-        <span>
-            Example: appHover is a custom directive that when you hover over text, it changes the color.
-        </span>
+      You can create your own directives just like a class or service.
+      <br />
+      <span>
+        Example: appHover is a custom directive that when you hover over text,
+        it changes the color.
+      </span>
     </p>
     <h3 [appHover]="'red'">Hover Over Me!</h3>
   </section>
-  
 </main>

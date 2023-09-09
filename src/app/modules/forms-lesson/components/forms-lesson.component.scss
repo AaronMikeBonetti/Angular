@@ -1,8 +1,12 @@
 main{
     background-color: white;
+    line-height: 32px;
     .mat-form-field{
         padding: 20px;
         display: block;
+    }
+    h2{
+      color: black;
     }
     .mat-error{
         font-size: 16px;
