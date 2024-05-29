@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, FormArray, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
@@ -10,12 +10,12 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./forms-lesson.component.scss'],
 })
 export class FormsLessonComponent implements OnInit {
-  myForm: FormGroup;
+  myForm: UntypedFormGroup;
   careers: string[] = ['Dentist', 'Police Man', 'Astronaut'];
   errorMessage: any;
   postId: any;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  constructor(private fb: UntypedFormBuilder, private http: HttpClient) {}
 
   ngOnInit(): void {
 
