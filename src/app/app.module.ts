@@ -20,11 +20,11 @@ import { RoutingLessonComponent } from './modules/routing-lesson/components/rout
 import { RxjsLessonComponent } from './modules/rxjs-lesson/components/rxjs-lesson.component';
 import { FormsLessonModule } from './modules/forms-lesson/modules/forms-lesson.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input'
-import { MatSelectModule } from '@angular/material/select'
-import { MatButtonModule } from '@angular/material/button'
-import { MatCheckboxModule} from '@angular/material/checkbox'
-import { MatChipsModule} from '@angular/material/chips'
+import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input'
+import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select'
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button'
+import { MatLegacyCheckboxModule as MatCheckboxModule} from '@angular/material/legacy-checkbox'
+import { MatLegacyChipsModule as MatChipsModule} from '@angular/material/legacy-chips'
 import { CommonModule } from '@angular/common';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 
