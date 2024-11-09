@@ -39,11 +39,11 @@ import {
 import { NgFor } from '@angular/common';
 
 @Component({
-    selector: 'app-observable-lesson',
-    templateUrl: './observable-lesson.component.html',
-    styleUrls: ['./observable-lesson.component.scss'],
-    standalone: true,
-    imports: [NgFor],
+  selector: 'app-observable-lesson',
+  templateUrl: './observable-lesson.component.html',
+  styleUrls: ['./observable-lesson.component.scss'],
+  standalone: true,
+  imports: [NgFor],
 })
 export class ObservableLessonComponent implements OnInit {
   numbersObservable$: Observable<number> = of(1, 2, 3, 4, 5);
@@ -273,6 +273,9 @@ export class ObservableLessonComponent implements OnInit {
     });
 
     //districtUntil
+    //takeUntilDestroyed - this is used to unsubscribe from an observable when a component is destroyed.
+    //destroyRef = inject(DestroyRef);
+    //takeUntilDestroyed(this.destroyRef);
     //tap
     //retry
     //catchError
