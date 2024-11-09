@@ -8,8 +8,8 @@ describe('DirectivesLessonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DirectivesLessonComponent ]
-    })
+    imports: [DirectivesLessonComponent]
+})
     .compileComponents();
   });
 

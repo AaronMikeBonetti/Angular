@@ -8,8 +8,8 @@ describe('ObservableLessonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ObservableLessonComponent ]
-    })
+    imports: [ObservableLessonComponent]
+})
     .compileComponents();
   });
 

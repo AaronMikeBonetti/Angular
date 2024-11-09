@@ -8,8 +8,8 @@ describe('NgrxLessonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgrxLessonComponent ]
-    })
+    imports: [NgrxLessonComponent]
+})
     .compileComponents();
   });
 

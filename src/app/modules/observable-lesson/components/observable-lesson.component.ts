@@ -36,11 +36,14 @@ import {
   switchMap,
   take,
 } from 'rxjs/operators';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-observable-lesson',
-  templateUrl: './observable-lesson.component.html',
-  styleUrls: ['./observable-lesson.component.scss'],
+    selector: 'app-observable-lesson',
+    templateUrl: './observable-lesson.component.html',
+    styleUrls: ['./observable-lesson.component.scss'],
+    standalone: true,
+    imports: [NgFor],
 })
 export class ObservableLessonComponent implements OnInit {
   numbersObservable$: Observable<number> = of(1, 2, 3, 4, 5);

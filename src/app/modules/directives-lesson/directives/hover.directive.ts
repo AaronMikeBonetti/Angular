@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener, Input } from "@angular/core";
 
 @Directive({
-  selector: "[appHover]",
+    selector: "[appHover]",
+    standalone: true,
 })
 export class HoverDirective {
   @Input() appHover = "";

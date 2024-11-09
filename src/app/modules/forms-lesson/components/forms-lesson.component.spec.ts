@@ -8,8 +8,8 @@ describe('FormsLessonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormsLessonComponent ]
-    })
+    imports: [FormsLessonComponent]
+})
     .compileComponents();
   });
 

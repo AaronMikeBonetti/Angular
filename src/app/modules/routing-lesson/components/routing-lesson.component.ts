@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-routing-lesson',
-  templateUrl: './routing-lesson.component.html',
-  styleUrls: ['./routing-lesson.component.scss'],
+    selector: 'app-routing-lesson',
+    templateUrl: './routing-lesson.component.html',
+    styleUrls: ['./routing-lesson.component.scss'],
+    standalone: true,
+    imports: [RouterLink],
 })
 export class RoutingLessonComponent implements OnInit {
   html: SafeHtml;

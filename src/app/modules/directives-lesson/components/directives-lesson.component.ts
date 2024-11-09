@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { HoverDirective } from '../directives/hover.directive';
+import { NgFor, NgIf, NgStyle } from '@angular/common';
 
 @Component({
-  selector: 'app-directives-lesson',
-  templateUrl: './directives-lesson.component.html',
-  styleUrls: ['./directives-lesson.component.scss']
+    selector: 'app-directives-lesson',
+    templateUrl: './directives-lesson.component.html',
+    styleUrls: ['./directives-lesson.component.scss'],
+    standalone: true,
+    imports: [NgFor, NgIf, NgStyle, HoverDirective]
 })
 export class DirectivesLessonComponent implements OnInit {
 

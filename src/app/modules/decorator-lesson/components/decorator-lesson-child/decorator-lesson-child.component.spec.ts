@@ -8,8 +8,8 @@ describe('DecoratorLessonChildComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DecoratorLessonChildComponent ]
-    })
+    imports: [DecoratorLessonChildComponent]
+})
     .compileComponents();
   });
 

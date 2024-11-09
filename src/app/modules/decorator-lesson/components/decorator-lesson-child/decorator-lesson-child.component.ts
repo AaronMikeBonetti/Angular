@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-decorator-lesson-child',
-  templateUrl: './decorator-lesson-child.component.html',
-  styleUrls: ['./decorator-lesson-child.component.scss']
+    selector: 'app-decorator-lesson-child',
+    templateUrl: './decorator-lesson-child.component.html',
+    styleUrls: ['./decorator-lesson-child.component.scss'],
+    standalone: true
 })
 export class DecoratorLessonChildComponent implements OnInit {
 

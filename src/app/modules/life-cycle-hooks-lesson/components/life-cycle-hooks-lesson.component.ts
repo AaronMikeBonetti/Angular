@@ -1,9 +1,10 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-life-cycle-hooks-lesson',
-  templateUrl: './life-cycle-hooks-lesson.component.html',
-  styleUrls: ['./life-cycle-hooks-lesson.component.scss']
+    selector: 'app-life-cycle-hooks-lesson',
+    templateUrl: './life-cycle-hooks-lesson.component.html',
+    styleUrls: ['./life-cycle-hooks-lesson.component.scss'],
+    standalone: true
 })
 export class LifeCycleHooksLessonComponent implements OnInit {
 

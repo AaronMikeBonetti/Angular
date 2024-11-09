@@ -11,7 +11,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'exponentialPower'
+    name: 'exponentialPower',
+    standalone: true
 })
 export class ExponentialPowerPipe implements PipeTransform {
   transform(value: number, exponent: number): number {
