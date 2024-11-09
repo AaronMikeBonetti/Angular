@@ -1,3 +1,21 @@
-.decorator-lesson-child-container{
-    border: 2px solid black;
+@import "../../../../utilities/variables.scss";
+
+.decorator-lesson-child-container {
+  display: block;
+  width: 80%;
+  margin: 30px auto;
+  border: 2px solid black;
+  h1,
+  h2 {
+    font-weight: bold;
+    font-family: "Woliu-font";
+  }
+  button {
+    font-family: "Woliu-font";
+    padding: 15px;
+    border-radius: 25px;
+    border: 1px solid $primary-color;
+    margin: 5px;
+    background-color: $secondary-color;
+  }
 }

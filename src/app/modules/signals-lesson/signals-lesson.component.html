@@ -1,0 +1,64 @@
+<main>
+  <section>
+    <h1>Signals Lesson</h1>
+    <p>
+      Signals are a primitive data type used for reactive programming. Instead
+      of using a component tree, it uses a signal graph, which allows angular to
+      know exactly where something changed and exactly what changed.
+    </p>
+  </section>
+  <section>
+    <h2>Creation</h2>
+    <p>Signals can be initiated using this syntax:</p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="initializeSignalCode"></code>
+    </pre>
+  </section>
+  <section>
+    <h2>Set</h2>
+    <p>Signals can be changed using the set() operator</p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="setSignalCode"></code>
+    </pre>
+  </section>
+  <section>
+    <h2>Update</h2>
+    <p>
+      Signals can be changed using the update() operator. This creates a new
+      value from the old one.
+    </p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="updateSignalCode"></code>
+    </pre>
+    <button (click)="updateCount()">Update Count</button>
+    <span>{{ count() }}</span>
+  </section>
+  <section>
+    <h2>Computed</h2>
+    <p>
+      A computed signal is a read-only value that is derived from or is
+      dependant on a another signal. Whenever count updates, Angular knows that
+      tenTimesCount needs to update as well. They are not writable so you cant
+      use set() on it.The value is lazily evaluated, meaning it doesn't
+      calculate until the value is read or used. The value is also cached/saved
+      or memoized so it doesn't have to recalculate, it just saves the last
+      emitted value.
+    </p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="computedSignalCode"></code>
+    </pre>
+    <span>Count: {{ count() }}</span>
+    <span>Ten Times:{{ tenTimesCount() }}</span>
+  </section>
+  <section>
+    <h2>Effect</h2>
+    <p>
+      Signals can use effect for side effects like logging or debugging, these
+      emit every time a signal changes. This should NOT be used to update the
+      state. *Check console!*
+    </p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="effectSignalCode"></code>
+    </pre>
+  </section>
+</main>

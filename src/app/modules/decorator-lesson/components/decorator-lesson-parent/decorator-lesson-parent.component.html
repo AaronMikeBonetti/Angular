@@ -21,35 +21,35 @@
         <h2>Class</h2>
         <p>Tells us about a particular class’s intent and helps answer questions like whether the class is a component, service or a module.
             <br>
-            <span>Example: The &#64;Component decorator marks a class as an Angular component and provides configuration
+            <span>Example: The <span class="symbol">&#64;</span>Component decorator marks a class as an Angular component and provides configuration
                 metadata that determines how the component should be processed, instantiated, and used at runtime, same with &#64;Injectable for services.
             </span>
         </p>
     </section>
     <section>
         <h2>Parameter</h2>
-        <p> 
+        <p>
             Allows you to manually tell Angular to inject a particular provider. a provider is just an object that tells the class how to inject the dependency.
-            It can also be used to do something with a parameter in a method ie : function doSomething(&#64;ValidateParameter data).
-            Then just create a function that looks like this: function ValidateParameter(target:any, propertyKey:any, propertyIndex:any). 
+            It can also be used to do something with a parameter in a method ie : function doSomething(<span class="symbol">&#64;</span>ValidateParameter data).
+            Then just create a function that looks like this: function ValidateParameter(target:any, propertyKey:any, propertyIndex:any).
             This Allows you to configure the data that is being fed to the function before it uses it.
             <br>
-            <span>Example: &#64;Inject is used to provide a custom provider to the class to use a dependency</span>
+            <span>Example: <span class="symbol">&#64;</span>Inject is used to provide a custom provider to the class to use a dependency</span>
         </p>
     </section>
     <section>
         <h2>Property</h2>
         <p>This is used to decorate specific properties or variables inside a class.
             <br>
-            <span>Example: The &#64;Input and &#64;Output Decorator allows a component to exchange data between itself and either
+            <span>Example: The <span class="symbol">&#64;</span>Input and <span class="symbol">&#64;</span>Output Decorator allows a component to exchange data between itself and either
             its child component or parent component
             </span>
         </p>
         <section>
-            <h3>&#64;Input</h3>
-            <p>The &#64;Input decorator allows us to update data from the parent to the child component</p>
-            <h3>&#64;Output</h3>
-            <p>The &#64;Output decorator allows us to update data from the child to parent component</p>
+            <h3><span class="symbol">&#64;</span>Input</h3>
+            <p>The <span class="symbol">&#64;</span>Input decorator allows us to update data from the parent to the child component</p>
+            <h3><span class="symbol">&#64;</span>Output</h3>
+            <p>The <span class="symbol">&#64;</span>Output decorator allows us to update data from the child to parent component</p>
             <br>
             <span>Counter from Child: {{propertyCounter}}</span>
             <app-decorator-lesson-child [parentToChildDecorator] ="parentToChildDecorator" (childEventData)="childToParentDecoratorEvent($event)"></app-decorator-lesson-child>
@@ -59,12 +59,12 @@
         <h2>Method</h2>
         <p>Similar to property decorators but are used for methods instead. method decorators are used to modify or enhance the behavior of class methods.
             <br>
-            <span>Example: &#64;HostListener is used to listen to events on the host element of a component or directive. 
+            <span>Example: <span>&#64;</span>HostListener is used to listen to events on the host element of a component or directive.
                 You can use it to bind methods to specific events such as clicks, keypresses ect.
             </span>
         </p>
         <section>
-            <h3>&#64;HostListener</h3>
+            <h3><span class="symbol">&#64;</span>HostListener</h3>
             <h4>When you press a key, angular listens and the count will go up</h4>
             <h4 *ngIf="methodCounter !== 1">You have pressed {{methodCounter}} keys!</h4>
             <h4 *ngIf="methodCounter === 1">You have pressed {{methodCounter}} key!</h4>
@@ -75,7 +75,7 @@
     </section>
     <section>
         <h2>Custom</h2>
-        <p>The last decorator type is a custom decorator is typically a TypeScript function that takes one or more arguments 
+        <p>The last decorator type is a custom decorator is typically a TypeScript function that takes one or more arguments
             and is used to annotate a class, method, property, or parameter with some additional functionality.
         </p>
     </section>

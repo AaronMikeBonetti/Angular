@@ -20,11 +20,11 @@ import { RoutingLessonComponent } from './modules/routing-lesson/components/rout
 import { RxjsLessonComponent } from './modules/rxjs-lesson/components/rxjs-lesson.component';
 import { FormsLessonModule } from './modules/forms-lesson/modules/forms-lesson.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input'
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select'
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button'
-import { MatLegacyCheckboxModule as MatCheckboxModule} from '@angular/material/legacy-checkbox'
-import { MatLegacyChipsModule as MatChipsModule} from '@angular/material/legacy-chips'
+import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox';
+import { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy-chips';
 import { CommonModule } from '@angular/common';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 
@@ -45,9 +45,9 @@ import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.c
     PageNotFoundComponent,
   ],
   imports: [
-    AppRoutingModule, 
-    BrowserModule, 
-    FormsModule, 
+    AppRoutingModule,
+    BrowserModule,
+    FormsModule,
     HttpClientModule,
     DecoratorLessonModule,
     DirectivesLessonModule,
@@ -58,14 +58,10 @@ import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.c
     MatCheckboxModule,
     MatChipsModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
   ],
-  exports: [
-    ReactiveFormsModule,
-    FormsModule,
-    CommonModule
-  ],
-  providers: [],
+  exports: [ReactiveFormsModule, FormsModule, CommonModule],
+  providers: [FormsModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

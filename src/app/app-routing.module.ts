@@ -10,25 +10,28 @@ import { PipeLessonComponent } from './modules/pipe-lesson/components/pipe-lesso
 import { RoutingLessonComponent } from './modules/routing-lesson/components/routing-lesson.component';
 import { RxjsLessonComponent } from './modules/rxjs-lesson/components/rxjs-lesson.component';
 import { FormsLessonComponent } from './modules/forms-lesson/components/forms-lesson.component';
+import { SignalsLessonComponent } from './modules/signals-lesson/signals-lesson.component';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'decorators', component: DecoratorLessonComponent},
-  {path: 'directives', component: DirectivesLessonComponent},
-  {path: 'pipes', component: PipeLessonComponent},
-  {path: 'forms', component: FormsLessonComponent},
-  {path: 'observables', component: ObservableLessonComponent},
-  {path: 'routing', component: RoutingLessonComponent},
-  {path: 'life-cycle-hooks', component: LifeCycleHooksLessonComponent},
-  {path: 'rxjs', component: RxjsLessonComponent},
-  {path: 'ngrx', component: NgrxLessonComponent},
+  { path: '', component: HomeComponent },
+  { path: 'decorators', component: DecoratorLessonComponent },
+  { path: 'directives', component: DirectivesLessonComponent },
+  { path: 'pipes', component: PipeLessonComponent },
+  { path: 'forms', component: FormsLessonComponent },
+  { path: 'observables', component: ObservableLessonComponent },
+  { path: 'routing', component: RoutingLessonComponent },
+  { path: 'life-cycle-hooks', component: LifeCycleHooksLessonComponent },
+  { path: 'rxjs', component: RxjsLessonComponent },
+  { path: 'ngrx', component: NgrxLessonComponent },
+  { path: 'signals', component: SignalsLessonComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

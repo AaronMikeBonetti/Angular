@@ -34,7 +34,7 @@ export class DecoratorLessonComponent implements OnInit {
   @Output() childToParentDecorator: string;
   @ViewChild('nameRef') nameElementRef: ElementRef;
   nameRef: string;
-  parentToChildDecorator: string = 'this is the parent talking to the child';
+  parentToChildDecorator: string = 'This sentence was passed from the parent';
 
   //@Output
   propertyCounter: number;

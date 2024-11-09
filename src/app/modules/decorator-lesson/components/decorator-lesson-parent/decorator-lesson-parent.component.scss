@@ -1,3 +1,47 @@
-ul{
-    margin-left: 80px;
+@import "../../../../utilities/variables.scss";
+
+main {
+  section {
+    ul {
+      margin-left: 80px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    h1,
+    h3,
+    h2 {
+      font-weight: 500;
+      font-family: "Woliu-font";
+    }
+    p {
+      font-size: 20px;
+    }
+    span {
+      font-size: 24px;
+      margin: 0 auto;
+      color: $quaternary-color;
+    }
+    .symbol {
+      font-size: 30px;
+    }
+    section {
+      margin: 30px;
+      h1,
+      h3,
+      h2,
+      h4 {
+        font-weight: 500;
+        font-family: "Woliu-font";
+      }
+      button {
+        font-family: "Woliu-font";
+        padding: 15px;
+        border-radius: 25px;
+        border: 1px solid $primary-color;
+        margin: 5px;
+        background-color: $secondary-color;
+      }
+    }
+  }
 }

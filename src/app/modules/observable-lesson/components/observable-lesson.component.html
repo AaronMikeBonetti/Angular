@@ -69,28 +69,24 @@
       <br />
       <section>
         <h3>map</h3>
-        <span> 
-            Transforms the emitted values using a given function. 
-        </span>
+        <span> Transforms the emitted values using a given function. </span>
         <pre class="dark" id="code-snippet" role="presentation">
             <code [innerHTML]="mapOperatorCode" >
             </code>
         </pre>
         <ul *ngFor="let number of mapObservableData">
-          <li>{{number}}</li>
+          <li>{{ number }}</li>
         </ul>
       </section>
       <section>
         <h3>filter</h3>
-        <span> 
-            Filters the emitted values based on a given condition. 
-        </span>
+        <span> Filters the emitted values based on a given condition. </span>
         <pre class="dark" id="code-snippet" role="presentation">
             <code [innerHTML]="filterOperatorCode" >
             </code>
         </pre>
         <ul *ngFor="let number of filterObservableData">
-          <li>{{number}}</li>
+          <li>{{ number }}</li>
         </ul>
       </section>
       <section>
@@ -105,7 +101,7 @@
             </code>
         </pre>
         <ul *ngFor="let letters of mergeMapObservableData">
-          <li>{{letters}}</li>
+          <li>{{ letters }}</li>
         </ul>
       </section>
       <section>
@@ -120,7 +116,7 @@
             </code>
         </pre>
         <ul *ngFor="let item of switchMapObservableData">
-          <li>{{item}}</li>
+          <li>{{ item }}</li>
         </ul>
       </section>
       <section>
@@ -131,11 +127,11 @@
           before merging the next.
         </span>
         <pre class="dark" id="code-snippet" role="presentation">
-            <code [innerHTML]="switchMapOperatorCode">
+            <code [innerHTML]="concatMapOperatorCode">
             </code>
         </pre>
         <ul *ngFor="let item of concatMapObservableData">
-          <li>{{item}}</li>
+          <li>{{ item }}</li>
         </ul>
       </section>
       <section>
@@ -174,13 +170,17 @@
             </code>
         </pre>
       </section>
+      <section>
+        <h3>combineLatest</h3>
+        <span> </span>
+        <pre class="dark" id="code-snippet" role="presentation">
+            <code [innerHTML]="combineLatestOperatorCode">
+            </code>
+        </pre>
+        <ul *ngFor="let item of combineLatestObservableData">
+          <li>{{ item }}</li>
+        </ul>
+      </section>
     </section>
-    <!-- <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul> -->
   </div>
 </main>

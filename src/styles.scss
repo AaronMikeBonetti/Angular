@@ -1,66 +1,77 @@
 @import "prismjs/themes/prism.css";
 @import "~prismjs/themes/prism-dark.css";
+@import "./app/utilities/variables.scss";
 
 @font-face {
-    font-family: 'DBZ-font';
-    src: url('./assets/fonts/Saiyan-Sans.ttf');
+  font-family: "DBZ-font";
+  src: url("./assets/fonts/Saiyan-Sans.ttf");
 }
 @font-face {
-    font-family: 'Woliu-font';
-    src: url('./assets/fonts/Woliu-Maners-Demo.ttf');
+  font-family: "Woliu-font";
+  src: url("./assets/fonts/Woliu-Maners-Demo.ttf");
 }
 @font-face {
-    font-family: 'Merriweather-font';
-    src: url('./assets/fonts/Merriweather-Regular.ttf');
+  font-family: "Merriweather-font";
+  src: url("./assets/fonts/Merriweather-Regular.ttf");
 }
-*{
-    letter-spacing: 2px;
-    color: 00000;
-    font-family: 'Woliu-font';
-    font-size: 24px;
-    line-height: 24px;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  letter-spacing: 2px;
+  color: $tertiary-color;
+  font-family: "Woliu-font";
+  font-size: 24px;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body{
+body {
+  background-color: $secondary-color;
 
-    background-color: #5e6061;
-
-    main{
-        padding: 40px;
-        margin-left: 250px;
-        white-space:wrap;
-    }
-
-    h1{
-        color: #ffffff;
+  main {
+    padding: 40px;
+    margin-left: 250px;
+    white-space: wrap;
+    font-family: "Woliu-font";
+    section {
+      h1 {
+        color: $primary-color;
         text-decoration: underline;
-    }
+        font-size: 30px;
+      }
 
-    h2{
-        color: #ffffff;
-    }
-    h3{
-        color: #ffffff;
-    }
+      h2 {
+        color: $primary-color;
+        font-weight: 500;
+        font-size: 24px;
+      }
+      h3 {
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 20px;
+      }
 
-    a{
-        color: black;
+      a {
+        color: $tertiary-color;
+      }
 
-    }
-
-    h1, h2{
+      h1,
+      h2 {
         letter-spacing: 5px;
-    }
+      }
 
-    #code-snippet{
-        background: black;
-        color: white;
+      #code-snippet {
+        background: $tertiary-color;
+        color: $primary-color;
+      }
     }
+  }
 }
 
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

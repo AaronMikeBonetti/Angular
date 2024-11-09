@@ -26,8 +26,16 @@
 //(you are the consumer)
 
 import { Component, OnInit } from '@angular/core';
-import { Observable, interval, of } from 'rxjs';
-import { concatMap, delay, filter, map, mergeMap, switchMap, take } from 'rxjs/operators';
+import { Observable, combineLatest, forkJoin, interval, of, zip } from 'rxjs';
+import {
+  concatMap,
+  delay,
+  filter,
+  map,
+  mergeMap,
+  switchMap,
+  take,
+} from 'rxjs/operators';
 
 @Component({
   selector: 'app-observable-lesson',
@@ -36,13 +44,14 @@ import { concatMap, delay, filter, map, mergeMap, switchMap, take } from 'rxjs/o
 })
 export class ObservableLessonComponent implements OnInit {
   numbersObservable$: Observable<number> = of(1, 2, 3, 4, 5);
-  lettersObservable$: Observable<string> = of('a', 'b', 'c');
+  lettersObservable$: Observable<string> = of('a', 'b', 'c').pipe(delay(1000));
 
   mapObservableData: number[] = [];
   filterObservableData: number[] = [];
   mergeMapObservableData: string[] = [];
   switchMapObservableData: any[] = [];
-  concatMapObservableData: any[] = []
+  concatMapObservableData: any[] = [];
+  combineLatestObservableData: any[] = [];
 
   creatingObservableCode: string = `
   import { Observable } from 'rxjs';
@@ -87,7 +96,7 @@ export class ObservableLessonComponent implements OnInit {
     this.numbersObservable = of(1, 2, 3, 4, 5);
 
     this.numbersObservable.pipe(
-      filter(value => value > 2)).subscribe(result => 
+      filter(value => value > 2)).subscribe(result =>
       this.filterObservableData.push(result))
   }`;
 
@@ -136,7 +145,7 @@ export class ObservableLessonComponent implements OnInit {
       )
       .subscribe(letter => this.concatMapObservableData.push(letter)
       );
-    }`
+    }`;
 
   ofOperatorCode: string = `
     import { of } from 'rxjs';
@@ -178,11 +187,22 @@ export class ObservableLessonComponent implements OnInit {
     ).subscribe(name => {
       console.log(name); // Output: Alice, Bob, Charlie
     });`;
+  combineLatestOperatorCode: string = `
+    import { from } from 'rxjs';
+    import { combineLatest } from 'rxjs/operators';
+
+    const data1 = ['Billy','John','Cindy'];
+
+    const data2 = ['Chad','Nicole','Sally'];
+
+    combineLatest(data1, data2).subscribe((names1, names2)=>{
+    console.log(names1, names2)
+    })`;
 
   constructor() {}
 
   ngOnInit(): void {
-    //Map
+    //map
 
     this.numbersObservable$
       .pipe(map((value) => value * 2))
@@ -190,7 +210,7 @@ export class ObservableLessonComponent implements OnInit {
         this.mapObservableData.push(result);
       });
 
-    //Filter
+    //filter
 
     this.numbersObservable$
       .pipe(filter((value) => value > 2))
@@ -210,27 +230,48 @@ export class ObservableLessonComponent implements OnInit {
     this.numbersObservable$
       .pipe(
         switchMap((number) => {
-          this.switchMapObservableData.push(number)
-          return this.lettersObservable$.pipe(delay(15000));
+          this.switchMapObservableData.push(number);
+          return this.lettersObservable$.pipe(delay(1000));
         })
       )
       .subscribe((letter) => {
-        this.switchMapObservableData = [letter]
-        console.log('switch map changed value!')
-        }
-      );
+        this.switchMapObservableData = [letter];
+        console.log('switch map changed value!', letter);
+      });
 
-      //concatMap
-      this.numbersObservable$
+    //concatMap
+    this.numbersObservable$
       .pipe(
         concatMap((number) => {
-          this.concatMapObservableData.push(number)
+          this.concatMapObservableData.push(number);
           return this.lettersObservable$.pipe(delay(4000));
         })
       )
-      .subscribe(letter => this.concatMapObservableData.push(letter)
-      );
-    }
+      .subscribe((letter) => this.concatMapObservableData.push(letter));
+    //pluck
 
-    
+    //combineLatest
+    combineLatest([this.numbersObservable$, this.lettersObservable$]).subscribe(
+      ([names1, names2]) => {
+        console.log('combineLatest', names1, names2);
+      }
+    );
+
+    //forkJoin
+    forkJoin([this.numbersObservable$, this.lettersObservable$]).subscribe(
+      ([names1, names2]) => {
+        console.log('forkJoin', names1, names2);
+      }
+    );
+
+    //zip
+    zip(this.numbersObservable$, this.lettersObservable$).subscribe((names) => {
+      console.log('zip', names);
+    });
+
+    //districtUntil
+    //tap
+    //retry
+    //catchError
+  }
 }
