@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
-  FormArray,
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormField, MatError } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-// import { MatLegacyOptionModule } from '@angular/material/legacy-core';
-// import { MatLegacySelectModule } from '@angular/material/legacy-select';
-// import { NgIf, NgFor } from '@angular/common';
-// import { MatLegacyInputModule } from '@angular/material/legacy-input';
-// import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
+import { NgIf, NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-forms-lesson',
@@ -22,13 +22,16 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./forms-lesson.component.scss'],
   standalone: true,
   imports: [
+    MatFormField,
+    MatError,
+    MatCardModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatSelectModule,
     ReactiveFormsModule,
-    // MatLegacyFormFieldModule,
-    // MatLegacyInputModule,
-    // NgIf,
-    // MatLegacySelectModule,
-    // NgFor,
-    // MatLegacyOptionModule,
+    MatInputModule,
+    NgForOf,
+    NgIf,
   ],
 })
 export class FormsLessonComponent implements OnInit {
@@ -37,7 +40,10 @@ export class FormsLessonComponent implements OnInit {
   errorMessage: any;
   postId: any;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  private fb = inject(FormBuilder);
+  private http = inject(HttpClient);
+
+  constructor() {}
 
   ngOnInit(): void {
     console.log(this.fb);

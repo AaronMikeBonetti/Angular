@@ -1,75 +1,105 @@
-<!-- <main class="decorator-contatiner">
-    <section>
-        <h1>Forms Overview</h1>
+<main class="decorator-contatiner">
+  <section>
+    <h1>Forms Overview</h1>
     <p>
-        <br>
-        <span></span>
+      <br />
+      <span></span>
     </p>
-    </section>
-    <section>
-        <form [formGroup]="myForm">
-            <mat-form-field floatLabel="never">
-                <input matInput placeholder="email " formControlName="email">
-                <mat-error *ngIf="email?.invalid">
-                    Your Email Is Incorrect
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field floatLabel="never">
-                <input matInput placeholder="password " formControlName="password">
-                <mat-error *ngIf="password?.invalid">
-                    Your Password needs a minimum eight characters, at least one letter, one number and one special character
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field floatLabel="never">
-                <input matInput type="number" placeholder="age" formControlName="age">
-                <mat-error *ngIf="age?.errors?.min">
-                    {{ age?.errors?.min?.actual }} Is Too Young To Use this App
-                </mat-error>
-                <mat-error *ngIf="age?.errors?.max">
-                    {{ age?.errors?.max?.actual }} Is too Old To use this App
-                </mat-error>
-                <mat-error *ngIf="age?.untouched">
-                    Please Add Age
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field floatLabel="never">
-                <textarea matInput placeholder="message" formControlName="message"></textarea>
-            </mat-form-field>
-            <mat-form-field floatLabel="never">
-                <mat-select placeholder="career" formControlName="career">
-                    <mat-option class="mat-option" *ngFor="let career of careers" [value]="career">{{career}}</mat-option>
-                </mat-select>
-                <mat-error *ngIf="career?.invalid">
-                    Your Career is Required
-                </mat-error>
-            </mat-form-field>
+  </section>
+  <section>
+    <form [formGroup]="myForm">
+      <mat-form-field>
+        <input matInput placeholder="email " formControlName="email" />
+        <mat-error *ngIf="email?.invalid"> Your Email Is Incorrect </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="password " formControlName="password" />
+        <mat-error *ngIf="password?.invalid">
+          Your Password needs a minimum eight characters, at least one letter,
+          one number and one special character
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="age" formControlName="age" />
+        <mat-error *ngIf="age?.errors?.min">
+          {{ age?.errors?.min?.actual }} Is Too Young To Use this App
+        </mat-error>
+        <mat-error *ngIf="age?.errors?.max">
+          {{ age?.errors?.max?.actual }} Is too Old To use this App
+        </mat-error>
+        <mat-error *ngIf="age?.untouched"> Please Add Age </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput
+          placeholder="message"
+          formControlName="message"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="career" formControlName="career">
+          <mat-option
+            class="mat-option"
+            *ngFor="let career of careers"
+            [value]="career"
+            >{{ career }}</mat-option
+          >
+        </mat-select>
+        <mat-error *ngIf="career?.invalid"> Your Career is Required </mat-error>
+      </mat-form-field>
 
-            <div formGroupName="cellPhone">
-                <h2>Cellphone</h2>
-                <mat-form-field floatLabel="never">
-                    <input matInput type="number" placeholder="area" formControlName="area">
-                </mat-form-field>
-                <mat-form-field floatLabel="never">
-                    <input matInput type="number" placeholder="prefix" formControlName="prefix">
-                </mat-form-field>
-                <mat-form-field floatLabel="never">
-                    <input matInput placeholder="line" formControlName="line">
-                </mat-form-field>
-            </div>
-            <div formGroupName="homePhone">
-              <h2>Home phone</h2>
-                <mat-form-field floatLabel="never">
-                    <input matInput type="number" placeholder="area" formControlName="area">
-                </mat-form-field>
-                <mat-form-field floatLabel="never">
-                    <input matInput  type="number" placeholder="prefix" formControlName="prefix">
-                </mat-form-field>
-                <mat-form-field floatLabel="never">
-                    <input matInput type="number" placeholder="line" formControlName="line">
-                </mat-form-field>
-            </div>
-            <button color="primary" type="submit" (click)="handleSubmit()">Submit</button>
-        </form>
-    </section>
+      <div formGroupName="cellPhone">
+        <h2>Cellphone</h2>
+        <mat-form-field>
+          <input
+            matInput
+            type="number"
+            placeholder="area"
+            formControlName="area"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="number"
+            placeholder="prefix"
+            formControlName="prefix"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="line" formControlName="line" />
+        </mat-form-field>
+      </div>
+      <div formGroupName="homePhone">
+        <h2>Home phone</h2>
+        <mat-form-field>
+          <input
+            matInput
+            type="number"
+            placeholder="area"
+            formControlName="area"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="number"
+            placeholder="prefix"
+            formControlName="prefix"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="number"
+            placeholder="line"
+            formControlName="line"
+          />
+        </mat-form-field>
+      </div>
+      <button color="primary" type="submit" (click)="handleSubmit()">
+        Submit
+      </button>
+    </form>
+  </section>
 </main>
- -->
