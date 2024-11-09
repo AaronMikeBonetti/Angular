@@ -1,40 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, FormArray, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormArray,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
+
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-import { MatLegacyOptionModule } from '@angular/material/legacy-core';
-import { MatLegacySelectModule } from '@angular/material/legacy-select';
-import { NgIf, NgFor } from '@angular/common';
-import { MatLegacyInputModule } from '@angular/material/legacy-input';
-import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
+// import { MatLegacyOptionModule } from '@angular/material/legacy-core';
+// import { MatLegacySelectModule } from '@angular/material/legacy-select';
+// import { NgIf, NgFor } from '@angular/common';
+// import { MatLegacyInputModule } from '@angular/material/legacy-input';
+// import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
 
 @Component({
-    selector: 'app-forms-lesson',
-    templateUrl: './forms-lesson.component.html',
-    styleUrls: ['./forms-lesson.component.scss'],
-    standalone: true,
-    imports: [
-        ReactiveFormsModule,
-        MatLegacyFormFieldModule,
-        MatLegacyInputModule,
-        NgIf,
-        MatLegacySelectModule,
-        NgFor,
-        MatLegacyOptionModule,
-    ],
+  selector: 'app-forms-lesson',
+  templateUrl: './forms-lesson.component.html',
+  styleUrls: ['./forms-lesson.component.scss'],
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    // MatLegacyFormFieldModule,
+    // MatLegacyInputModule,
+    // NgIf,
+    // MatLegacySelectModule,
+    // NgFor,
+    // MatLegacyOptionModule,
+  ],
 })
 export class FormsLessonComponent implements OnInit {
-  myForm: UntypedFormGroup;
+  myForm: FormGroup;
   careers: string[] = ['Dentist', 'Police Man', 'Astronaut'];
   errorMessage: any;
   postId: any;
 
-  constructor(private fb: UntypedFormBuilder, private http: HttpClient) {}
+  constructor(private fb: FormBuilder, private http: HttpClient) {}
 
   ngOnInit(): void {
-
-    console.log(this.fb)
+    console.log(this.fb);
     const phone = this.fb.group({
       area: [],
       prefix: [],
