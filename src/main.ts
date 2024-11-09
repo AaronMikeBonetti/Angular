@@ -9,10 +9,7 @@ import { AppComponent } from './app/app.component';
 // import { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox';
 // import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import {
-  withInterceptorsFromDi,
-  provideHttpClient,
-} from '@angular/common/http';
+import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { AppRoutingModule } from './app/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
