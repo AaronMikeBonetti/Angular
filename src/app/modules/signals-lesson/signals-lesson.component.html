@@ -49,7 +49,6 @@
     </pre>
     <span>Count: {{ count() }}</span>
     <span>Ten Times:{{ tenTimesCount() }}</span>
-    <span>Ten Times:{{ date() }}</span>
   </section>
   <section>
     <h2>Effect</h2>
@@ -62,4 +61,60 @@
       <code [innerHTML]="effectSignalCode"></code>
     </pre>
   </section>
+  <section>
+    <h2>RxJS</h2>
+    <h3>toSignal()</h3>
+    <p>Observables can be converted to signals using the toSignal() method.</p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="toSignalSignalCode"></code>
+    </pre>
+    <span>Signal Date: {{ date() }}</span>
+  </section>
+  <section>
+    <h3>toObservable()</h3>
+    <p>Conversely, signals can be converted to observables.</p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="toObservableSignalCode"></code>
+    </pre>
+    <span>Observable Date: {{ date$ | async }}</span>
+  </section>
+  <section>
+    <h2>*New API*: Input, Output, ViewChild/Children, ContentChild/Children</h2>
+    <h3>viewChild</h3>
+    <p>You can access children using the viewChild() method</p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="viewChildSignalCode"></code>
+    </pre>
+    <span #viewChildExample>This is the viewChild example!</span>
+  </section>
+  <section>
+    <h3>input() & output()</h3>
+    <p>
+      You can pass values to a child component from the parent using the input()
+      method and from the parent component to the child using the output()
+    </p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="inputAndOutputSignalCode"></code>
+    </pre>
+    <span id="childSignalOutputExample"></span>
+    <app-signals-lesson-child
+      [parentSignalInputExample]="parentSignalInputExample"
+      (childSignalOutputExample)="displayChildSignalOutputExample($event)"
+    ></app-signals-lesson-child>
+  </section>
+  <!-- <section>
+    <h3>model()</h3>
+    <p>
+      You can pass values to a child component from the parent using the input()
+      method and from the parent component to the child using the output()
+    </p>
+    <pre id="code-snippet" role="presentation">
+      <code [innerHTML]="modelSignalCode"></code>
+    </pre>
+    <span id="SignalOutputExample"></span>
+    <app-signals-lesson-child
+      [parentSignalInputExample]="parentSignalInputExample"
+      (childSignalOutputExample)="displayChildSignalOutputExample($event)"
+    ></app-signals-lesson-child>
+  </section> -->
 </main>

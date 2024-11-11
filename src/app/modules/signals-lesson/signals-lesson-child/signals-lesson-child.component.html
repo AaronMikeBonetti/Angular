@@ -1,0 +1,7 @@
+<div>
+  <h1>Child Component</h1>
+  <p>Input: {{ parentSignalInputExample() }}</p>
+  <button (click)="childSignalOutputExample.emit('Child Button Was Clicked')">
+    Click me to emit to parent!
+  </button>
+</div>
