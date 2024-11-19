@@ -9,6 +9,7 @@ import {
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { AppRoutingModule } from './app/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { provideStore } from '@ngrx/store';
 
 if (environment.production) {
   enableProdMode();
@@ -25,5 +26,6 @@ bootstrapApplication(AppComponent, {
     FormsModule,
     provideHttpClient(withInterceptorsFromDi()),
     provideAnimations(),
+    provideStore(),
   ],
 }).catch((err) => console.error(err));

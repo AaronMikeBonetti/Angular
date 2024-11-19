@@ -64,7 +64,9 @@
   <section>
     <h2>RxJS</h2>
     <h3>toSignal()</h3>
-    <p>Observables can be converted to signals using the toSignal() method.</p>
+    <p>
+      Observables can be converted to signals using the toSignal() function.
+    </p>
     <pre id="code-snippet" role="presentation">
       <code [innerHTML]="toSignalSignalCode"></code>
     </pre>
@@ -81,32 +83,35 @@
   <section>
     <h2>*New API*: Input, Output, ViewChild/Children, ContentChild/Children</h2>
     <h3>viewChild</h3>
-    <p>You can access children using the viewChild() method</p>
+    <p>You can access children using the viewChild() function</p>
     <pre id="code-snippet" role="presentation">
       <code [innerHTML]="viewChildSignalCode"></code>
     </pre>
     <span #viewChildExample>This is the viewChild example!</span>
   </section>
   <section>
-    <h3>input() & output()</h3>
+    <h3>input(), output() and model()</h3>
     <p>
       You can pass values to a child component from the parent using the input()
-      method and from the parent component to the child using the output()
+      function and from the parent component to the child using the output().
+      The model() function is used for both input and output for 2-way-binding.
     </p>
     <pre id="code-snippet" role="presentation">
       <code [innerHTML]="inputAndOutputSignalCode"></code>
     </pre>
     <span id="childSignalOutputExample"></span>
+    <span id="childSignalModelExample"></span>
     <app-signals-lesson-child
       [parentSignalInputExample]="parentSignalInputExample"
       (childSignalOutputExample)="displayChildSignalOutputExample($event)"
+      [(modelSignalExample)]="modelSignalExample"
     ></app-signals-lesson-child>
   </section>
-  <!-- <section>
+  <section>
     <h3>model()</h3>
     <p>
       You can pass values to a child component from the parent using the input()
-      method and from the parent component to the child using the output()
+      function and from the parent component to the child using the output()
     </p>
     <pre id="code-snippet" role="presentation">
       <code [innerHTML]="modelSignalCode"></code>
@@ -116,5 +121,5 @@
       [parentSignalInputExample]="parentSignalInputExample"
       (childSignalOutputExample)="displayChildSignalOutputExample($event)"
     ></app-signals-lesson-child>
-  </section> -->
+  </section>
 </main>

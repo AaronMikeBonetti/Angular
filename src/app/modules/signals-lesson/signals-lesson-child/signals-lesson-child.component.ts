@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, model, output } from '@angular/core';
 
 @Component({
   selector: 'app-signals-lesson-child',
@@ -10,4 +10,5 @@ import { Component, input, output } from '@angular/core';
 export class SignalsLessonChildComponent {
   parentSignalInputExample = input<string>();
   childSignalOutputExample = output<string>();
+  modelSignalExample = model<string>('test');
 }

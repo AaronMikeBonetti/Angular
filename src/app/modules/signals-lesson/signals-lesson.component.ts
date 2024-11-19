@@ -36,7 +36,7 @@
 //Remember you can't access viewChild in ngOnInit() or the constructor directly
 //you have to use the afterNextRender() method to access the updated viewChild, otherwise it
 //throws a ExpressionChangedAfterCheckedError.
-//
+//Resource()
 
 import {
   afterNextRender,
@@ -143,7 +143,9 @@ export class SignalsLessonComponent {
 
   //input()
 
-  parentSignalInputExample: string = 'This is from the parent!';
+  parentSignalInputExample: string = 'This is input from the parent!';
+
+  modelSignalExample: string = 'This is the model from the parent!';
 
   constructor() {
     // Effect Signal:
@@ -171,6 +173,14 @@ export class SignalsLessonComponent {
   displayChildSignalOutputExample($event: string) {
     const childSignalOutputElement = document.querySelector(
       '#childSignalOutputExample'
+    );
+    if (childSignalOutputElement) {
+      childSignalOutputElement.textContent = $event;
+    }
+  }
+  displayChildSignalModelExample($event: string) {
+    const childSignalOutputElement = document.querySelector(
+      '#childSignalModelExample'
     );
     if (childSignalOutputElement) {
       childSignalOutputElement.textContent = $event;
