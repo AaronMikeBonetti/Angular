@@ -59,11 +59,10 @@ import { map, tap } from 'rxjs/operators';
 import { SignalsLessonChildComponent } from './signals-lesson-child/signals-lesson-child.component';
 
 @Component({
-  selector: 'app-signals-lesson',
-  standalone: true,
-  imports: [AsyncPipe, SignalsLessonChildComponent],
-  templateUrl: './signals-lesson.component.html',
-  styleUrl: './signals-lesson.component.scss',
+    selector: 'app-signals-lesson',
+    imports: [AsyncPipe, SignalsLessonChildComponent],
+    templateUrl: './signals-lesson.component.html',
+    styleUrl: './signals-lesson.component.scss'
 })
 export class SignalsLessonComponent {
   //Writable Signal:

@@ -8,7 +8,6 @@ import { RouterLink } from '@angular/router';
     selector: 'app-pipe-component',
     templateUrl: './pipe-lesson.component.html',
     styleUrls: ['./pipe-lesson.component.scss'],
-    standalone: true,
     imports: [RouterLink, ReactiveFormsModule, FormsModule, NgIf, UpperCasePipe, ExponentialPowerPipe, ReversePipe]
 })
 

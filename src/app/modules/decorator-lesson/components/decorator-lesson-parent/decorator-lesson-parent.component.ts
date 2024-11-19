@@ -13,12 +13,11 @@ import { DecoratorLessonChildComponent } from '../decorator-lesson-child/decorat
     selector: 'app-decorator-lesson',
     templateUrl: './decorator-lesson-parent.component.html',
     styleUrls: ['./decorator-lesson-parent.component.scss'],
-    standalone: true,
     imports: [
         DecoratorLessonChildComponent,
         NgIf,
         UpperCasePipe,
-    ],
+    ]
 })
 export class DecoratorLessonComponent implements OnInit {
   constructor() {}

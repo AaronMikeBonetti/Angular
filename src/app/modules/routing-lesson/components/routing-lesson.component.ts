@@ -6,8 +6,7 @@ import { RouterLink } from '@angular/router';
     selector: 'app-routing-lesson',
     templateUrl: './routing-lesson.component.html',
     styleUrls: ['./routing-lesson.component.scss'],
-    standalone: true,
-    imports: [RouterLink],
+    imports: [RouterLink]
 })
 export class RoutingLessonComponent implements OnInit {
   html: SafeHtml;

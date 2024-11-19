@@ -32,11 +32,10 @@ import { Component, inject, OnInit } from '@angular/core';
 import { NgrxLessonService } from '../services/ngrx-lesson.service';
 
 @Component({
-  selector: 'app-ngrx-lesson',
-  templateUrl: './ngrx-lesson.component.html',
-  styleUrls: ['./ngrx-lesson.component.scss'],
-  standalone: true,
-  imports: [],
+    selector: 'app-ngrx-lesson',
+    templateUrl: './ngrx-lesson.component.html',
+    styleUrls: ['./ngrx-lesson.component.scss'],
+    imports: []
 })
 export class NgrxLessonComponent implements OnInit {
   constructor() {}

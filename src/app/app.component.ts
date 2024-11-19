@@ -6,7 +6,6 @@ import { NavBarComponent } from './modules/nav-bar/components/nav-bar.component'
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: true,
     imports: [NavBarComponent, FooterComponent, RouterOutlet]
 })
 

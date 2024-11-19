@@ -6,7 +6,6 @@ import { NgFor, NgIf, NgStyle } from '@angular/common';
     selector: 'app-directives-lesson',
     templateUrl: './directives-lesson.component.html',
     styleUrls: ['./directives-lesson.component.scss'],
-    standalone: true,
     imports: [NgFor, NgIf, NgStyle, HoverDirective]
 })
 export class DirectivesLessonComponent implements OnInit {

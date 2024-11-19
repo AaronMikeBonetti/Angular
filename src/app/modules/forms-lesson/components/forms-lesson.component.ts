@@ -17,22 +17,21 @@ import { Observable, of } from 'rxjs';
 import { NgIf, NgForOf } from '@angular/common';
 
 @Component({
-  selector: 'app-forms-lesson',
-  templateUrl: './forms-lesson.component.html',
-  styleUrls: ['./forms-lesson.component.scss'],
-  standalone: true,
-  imports: [
-    MatFormField,
-    MatError,
-    MatCardModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    MatSelectModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    NgForOf,
-    NgIf,
-  ],
+    selector: 'app-forms-lesson',
+    templateUrl: './forms-lesson.component.html',
+    styleUrls: ['./forms-lesson.component.scss'],
+    imports: [
+        MatFormField,
+        MatError,
+        MatCardModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatSelectModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        NgForOf,
+        NgIf,
+    ]
 })
 export class FormsLessonComponent implements OnInit {
   myForm: FormGroup;
