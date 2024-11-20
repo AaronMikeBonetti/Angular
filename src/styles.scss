@@ -1,7 +1,11 @@
+/* Use modern @use for variables */
+@use "./app/utilities/variables" as vars;
+
+/* Import external CSS files */
 @import "prismjs/themes/prism.css";
 @import "prismjs/themes/prism-dark.css";
-@import "./app/utilities/variables.scss";
 
+/* Font face definitions */
 @font-face {
   font-family: "DBZ-font";
   src: url("./assets/fonts/Saiyan-Sans.ttf");
@@ -14,9 +18,11 @@
   font-family: "Merriweather-font";
   src: url("./assets/fonts/Merriweather-Regular.ttf");
 }
+
+/* Global styles */
 * {
   letter-spacing: 2px;
-  color: $tertiary-color;
+  color: vars.$tertiary-color;
   font-family: "Woliu-font";
   font-size: 24px;
   line-height: 24px;
@@ -24,34 +30,37 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
-  background-color: $secondary-color;
+  background-color: vars.$secondary-color;
 
   main {
     padding: 40px;
     margin-left: 250px;
     white-space: wrap;
     font-family: "Woliu-font";
+
     section {
       h1 {
-        color: $primary-color;
+        color: vars.$primary-color;
         text-decoration: underline;
         font-size: 30px;
       }
 
       h2 {
-        color: $primary-color;
+        color: vars.$primary-color;
         font-weight: 500;
         font-size: 24px;
       }
+
       h3 {
-        color: $primary-color;
+        color: vars.$primary-color;
         font-weight: bold;
         font-size: 20px;
       }
 
       a {
-        color: $tertiary-color;
+        color: vars.$tertiary-color;
       }
 
       h1,
@@ -60,8 +69,8 @@ body {
       }
 
       #code-snippet {
-        background: $tertiary-color;
-        color: $primary-color;
+        background: vars.$tertiary-color;
+        color: vars.$primary-color;
       }
     }
   }
@@ -71,6 +80,7 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;

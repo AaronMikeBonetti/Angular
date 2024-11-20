@@ -1,4 +1,4 @@
-@import "../../../../utilities/variables.scss";
+@use "../../../../utilities/variables.scss" as vars;
 
 main {
   section {
@@ -20,7 +20,7 @@ main {
     span {
       font-size: 24px;
       margin: 0 auto;
-      color: $quaternary-color;
+      color: vars.$quaternary-color;
     }
     .symbol {
       font-size: 30px;
@@ -38,9 +38,9 @@ main {
         font-family: "Woliu-font";
         padding: 15px;
         border-radius: 25px;
-        border: 1px solid $primary-color;
+        border: 1px solid vars.$primary-color;
         margin: 5px;
-        background-color: $secondary-color;
+        background-color: vars.$secondary-color;
       }
     }
   }
