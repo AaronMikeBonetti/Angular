@@ -48,11 +48,10 @@
   <section>
     <h2>ngDoCheck</h2>
     <p>
-      Called during every change detection cycle, which gives you
-      fine-grained control over how your component responds to changes. You can
-      use it to perform checks and updates that Angular's default change
-      detection mechanism might miss. Over using this hook can cause performance
-      issues.
+      Called during every change detection cycle, which gives you fine-grained
+      control over how your component responds to changes. You can use it to
+      perform checks and updates that Angular's default change detection
+      mechanism might miss. Over using this hook can cause performance issues.
     </p>
   </section>
   <section>
@@ -105,7 +104,15 @@
       a component's resources are properly disposed of when it is no longer
       needed.
     </p>
-    <br>
-    <p>If you route to a different page in the application you will see it console log that it was invoked.</p>
+    <br />
+    <p>
+      If you route to a different page in the application you will see it
+      console log that it was invoked.
+    </p>
   </section>
+  <section>
+    <h2>Invoke Change!</h2>
+    <p>Click to see how Angular handles UI changes!</p>
+  </section>
+  <button (click)="clickButton()">Click</button>
 </main>

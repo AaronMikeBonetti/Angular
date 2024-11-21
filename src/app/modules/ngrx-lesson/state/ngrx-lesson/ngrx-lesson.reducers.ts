@@ -8,12 +8,13 @@ import {
   removeTodo,
 } from './ngrx-lesson.actions';
 
+//This defines the NGRXLessonState/TodoState
 export interface INgrxLessonState {
   todos: ITodo[];
   error: string;
-  status: 'pending' | 'loading' | 'error' | 'success' | string;
+  status: 'pending' | 'loading' | 'error' | 'success';
 }
-
+//This initializes the NGRXLessonState/TodoState
 export const initialState: INgrxLessonState = {
   todos: [],
   error: '',
@@ -49,18 +50,18 @@ export const NgrxLessonComponentReducer = createReducer(
     todos: state.todos.filter((todo) => todo.id !== id),
   })),
 
-  on(loadTodos, (state) =>
-    //and returns the updated state with the new status
-    ({ ...state, status: 'loading' })
-  )
-  // on(loadTodosSuccess, (state, { todos }) => ({
-  //   ...state,
-  //   todos,
-  //   status: 'success',
-  // })),
-  // on(loadTodosFailure, (state, { error }) => ({
-  //   ...state,
-  //   error,
-  //   status: 'error',
-  // })),
+  on(loadTodos, (state) => ({ ...state, status: 'loading' as 'loading' })),
+
+  on(loadTodosSuccess, (state, { todos }) => ({
+    ...state,
+    todos: todos,
+    error: '',
+    status: 'success' as 'success',
+  })),
+
+  on(loadTodosFailure, (state, { error }) => ({
+    ...state,
+    error: error,
+    status: 'error' as 'error',
+  }))
 );
