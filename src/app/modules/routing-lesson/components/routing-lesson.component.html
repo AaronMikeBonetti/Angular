@@ -19,8 +19,9 @@
       route objects which include what the route is pointing to as well as what
       component we would like to render. Then we use the
       <span>forRoot</span> method to create and configures a module with all the
-      router providers and directives(See Directives <a routerLink="/directives">here</a>) Finally we export the routes module so it
-      can be exposed to the rest of the application.
+      router providers and directives(See Directives
+      <a routerLink="/directives">here</a>) Finally we export the routes module
+      so it can be exposed to the rest of the application.
     </p>
     <pre id="code-snippet" role="presentation">
           <code [innerHTML]="routingModuleCode"></code>
@@ -33,29 +34,48 @@
       navigate through the application. For this example Im using a nav tag but
       if you noticed in this project I have a dedicated navbar component where
       my routes are located, You can use your routes anywhere you like however.
-      We use the <span>routerLink</span> to tell angular you want to use a route
-      when that hyperlink is clicked.
+      We use the <span>routerLink</span> directive to tell angular you want to
+      use a route when that hyperlink is clicked.
     </p>
-    <pre  class="dark" id="code-snippet" role="presentation">
+    <pre class="dark" id="code-snippet" role="presentation">
         <code [innerHTML]="routingHTML" >
         </code>
     </pre>
     <p>
-        You'll also notice in that example I'm using routerLinkActive and router-outlet. routerLinkActive just tells angular that when that route is clicked or active, 
-        we want it to have an active style or state like an underline. The router-outlet is an Angular directive from the router library that is used to insert the component matched by 
-        routes to be displayed on the screen. Simply put its the place where we bootstrap or put the specific routes component that is being routed to.
-        Most likely you will only include this in the app.component.html file.
+      You'll also notice in that example I'm using routerLinkActive and
+      router-outlet. routerLinkActive just tells angular that when that route is
+      clicked or active, we want it to have an active style or state like an
+      underline. The router-outlet is an Angular directive from the router
+      library that is used to insert the component matched by routes to be
+      displayed on the screen. Simply put its the place where we bootstrap or
+      put the specific routes component that is being routed to. Most likely you
+      will only include this in the app.component.html file.
     </p>
   </section>
   <section>
     <h1>Route Parameters</h1>
     <p>
-        Route parameters are placeholders in a route's URL path that allow you to pass dynamic values to a component when navigating to a specific route in an Angular application. 
-        They are denoted by a colon (:) followed by the parameter name. For example, consider the following route definition:
+      Route parameters are placeholders in a route's URL path that allow you to
+      pass dynamic values to a component when navigating to a specific route in
+      an Angular application. They are denoted by a colon (:) followed by the
+      parameter name. For example, consider the following route definition:
     </p>
     <pre id="code-snippet" role="presentation">
         <code [innerHTML]="routingHTML">
         </code>
     </pre>
+  </section>
+  <section>
+    <h1>Child Routes/Dynamic Routing</h1>
+    <p></p>
+  </section>
+  <section>
+    <h2>Todos</h2>
+    @for (todo of todos; track todo; let idx = $index) {
+    <div (click)="goToTodo(todo.id)">
+      <span>{{ idx + 1 }}. {{ todo.todo }}:</span> <span> {{ todo.completed }}</span
+      ><br /><br />
+    </div>
+    }
   </section>
 </main>

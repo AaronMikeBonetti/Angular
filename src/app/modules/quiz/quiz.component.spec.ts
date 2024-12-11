@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RxjsLessonComponent } from './rxjs-lesson.component';
+import { QuizComponent } from './quiz.component';
 
-describe('RxjsLessonComponent', () => {
-  let component: RxjsLessonComponent;
-  let fixture: ComponentFixture<RxjsLessonComponent>;
+describe('QuizComponent', () => {
+  let component: QuizComponent;
+  let fixture: ComponentFixture<QuizComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [RxjsLessonComponent]
-})
+      imports: [QuizComponent]
+    })
     .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(RxjsLessonComponent);
+    fixture = TestBed.createComponent(QuizComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
